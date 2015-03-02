@@ -1,0 +1,105 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Language" content="en">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                <link rel="stylesheet" type="text/css" href="../style.css">
+                    <title>A bibliography of data flow testing papers</title>
+                    <meta name="keywords" content="data flow testing, data flow coverage, tool, test generation, data flow testing survey, code-based testing">
+                        <meta name="author" content="Ting Su and Wu Ke">
+                            <meta name="description" content="A bibliography of papers related to data flow testing.">
+                                
+                                <style type="text/css">
+                                    table.references td {
+                                        padding-bottom: 5px;
+                                        vertical-align: top;
+                                    }
+                                </style>
+    </head>
+    
+    <body>
+        
+        <table style="width: 100%">
+            <tr>
+                <td class="centered"><a href="http://tingsu.github.io/">Home</a></td>
+                <td class="centered"><a href="">Publications</a></td>
+                <td class="centered"><a href="">Curriculum Vitae</a></td>
+                <td class="centered"><a href="">Education</a></td>
+            </tr>
+        </table>
+        
+        <hr>
+        
+        <h1>A bibliography of papers related to data flow testing</h1>
+        
+        <h2>Overview</h2>
+        
+        <p>Data flow testing (DFT), introduced by Herman in 1976, is a family of testing strategies based on selecting paths from the program’s control flow in order to explore sequences of events related to the status of variables or data objects. It fills the gaps between all path testing and branch/statement testing with the aim to pinpoint the potential data-flow anomalies. The motivation behind is to verify the correctness of defined variable values by observing their corresponding uses can produce the desired results. See <a href="modelbased_testing.html">wiki</a> for details about white-box testing techniques.</p>
+        
+        <p>Various approaches have been used to automate data flow testing, for example the following approaches have been used in data flow-based test generation:</p>
+        
+        <ul>
+            <li><i>Random Testing</i>: random or adaptive random test generation.</li>
+            <li><i>Collateral Coverage-based Testing</i>: exploit the subsumption relation between test objectives to reduce testing cost and infer coverage.</li>
+            <li><i>Search-based Testing</i>: search algorithms (e.g. genetic algorithms, optimization algorithms) are used guided by a fitness function to sastify test objectives.</li>
+            <li><i>Symbolic Execution-based Testing</i>: it includes traditional (i.e. static) symbolic execution and dynamic symbolic execution.</li>
+            <li><i>Model Checking-based Testing</i>: a verfication-based testing method used to generate conterexamples as tests.</li>
+        </ul>
+        
+        
+        <h2>Publications</h2>
+        
+        <p>A list of publications related to data flow testing. (If you know about a paper that is not in the list, feel free to send me an <a href="mailto:tsuletgo@gmail.com">email</a>).</p>
+        
+        <ul>
+            <li>Last modification was checked on 2015.3.</li>
+            <li>Methods: ANN -- annotations, RAND -- random, SB -- search-based; SE -- symbolic execution; </li>
+        </ul>
+        
+        <table border="1">
+            <tr>
+                <th>Paper Title</th>
+                <th>Venue</th>
+                <th>Year</th>
+                <th>Research Topic</th>
+                <th>Authors</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Dynamic Data Flow Testing of Object Oriented Systems</td>
+                <td>ICSE</td>
+                <td>2015</td>
+                <td>Test generation</td>
+                <td>Giovanni Denaro, Alessandro Margara, Mauro Pezze, Mattia Vivanti</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Combining symbolic execution and model checking for data flow testing</td>
+                <td>ICSE</td>
+                <td>2015</td>
+                <td>Test Generation</td>
+                <td>Ting Su, Zhoulai Fu, Geguang Pu, Jifeng He,Zhendong Su</td>
+                <td></td>
+            </tr>
+        </table>
+        
+        
+        <h2><a name="references"></a>Others</h2>
+        
+        <table class="references">
+            <tr>
+                <td><a name="A+13"></a>[A+13]</td>
+                <td>S. Anand et al. (2013) "An orchestrated survey of methodologies for automated software test case generation," Journal of Systems and Software, 86:8, pp. 1978–2001. DOI: <a href="http://dx.doi.org/10.1016/j.jss.2013.02.061">j.jss.2013.02.061</a></td>
+            </tr>
+            <tr>
+                <td><a name="AGP10"></a>[AGP10]</td>
+                <td>E. Albert, M. Gomez-Zamalloa, and G. Puebla (2010) "PET: A Partial Evaluation-based Test Case Generation Tool for Java Bytecode." In Proc. PEPM, ACM, pp. 25-28. DOI: <a href="http://dx.doi.org/10.1145/1706356.1706363">10.1145/1706356.1706363</a></td>
+            </tr>
+        </table>
+        
+        <p>Last modified: 2015.3.</p>
+        
+    </body>
+</html>
