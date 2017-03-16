@@ -1,0 +1,1074 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Language" content="en">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                <link rel="stylesheet" type="text/css" href="../style.css">
+                    <title>A bibliography of data flow testing papers</title>
+                    <meta name="keywords" content="data flow testing, data flow coverage, tool, test generation, data flow testing survey, code-based testing">
+                        <meta name="author" content="Ting Su and Wu Ke">
+                            <meta name="description" content="A bibliography of papers related to data flow testing.">
+                                
+                                <style type="text/css">
+                                    table.references td {
+                                        padding-bottom: 5px;
+                                        vertical-align: top;
+                                    }
+                                </style>
+    </head>
+    
+    <body>
+        
+<!--        <table style="width: 100%">-->
+<!--            <tr>-->
+<!--                <td class="centered"><a href="http://tingsu.github.io/">Home</a></td>-->
+<!--                <td class="centered"><a href="">Publications</a></td>-->
+<!--                <td class="centered"><a href="">Curriculum Vitae</a></td>-->
+<!--                <td class="centered"><a href="">Education</a></td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+        <hr>
+        
+        <h1>A bibliography of Papers and Tools on Data Flow Testing</h1>
+        
+        <h2>Overview</h2>
+        
+        <p>Data flow testing (DFT), introduced by Herman in 1976, is a family of testing strategies based on selecting paths from the program’s control flow in order to explore sequences of events related to the status of variables or data objects. It fills the gaps between all path testing and branch/statement testing with the aim to pinpoint the potential data-flow anomalies. The motivation behind is to verify the correctness of defined variable values by observing their corresponding uses can produce the desired results.</p>
+        
+        <p>See this <a href="http://tingsu.github.io/files/dft-survey.pdf">survey</a> for details about data flow testing techniques.</p>
+        
+        <p>Various approaches have been used to automate data flow testing, for example the following approaches have been used in data flow-based test generation:</p>
+        
+        <ul>
+            <li><i>Random Testing</i>: random or adaptive random test generation.</li>
+            <li><i>Collateral Coverage-based Testing</i>: exploit the subsumption relation between test objectives to reduce testing cost and infer coverage.</li>
+            <li><i>Search-based Testing</i>: search algorithms (e.g. genetic algorithms, optimization algorithms) are used guided by a fitness function to sastify test objectives.</li>
+            <li><i>Symbolic Execution-based Testing</i>: it includes traditional (i.e. static) symbolic execution and dynamic symbolic execution.</li>
+            <li><i>Model Checking-based Testing</i>: a verfication-based testing method used to generate conterexamples as tests.</li>
+        </ul>
+        
+        
+        <h2>Publications</h2>
+        
+        <p>A list of publications related to data flow testing (download, <a href="http://tingsu.github.io/files/publication_repo.zip">zip</a>). (If you know about a paper that is not in the list, feel free to send me an <a href="mailto:tsuletgo@gmail.com">email</a>).</p>
+        
+        <ul>
+            <li>Methods: RT - random testing, GA - genetic algorithm</li>
+        </ul>
+
+	<table border="1">
+		<tr>
+			<th>Paper Title</th>
+			<th>Venue</th>
+			<th>Year</th>
+			<th>Research Topic</th>
+			<th>Authors</th>
+			<th>Description</th>
+		</tr>
+        
+        <tr>
+            <td><a href="http://dl.acm.org/citation.cfm?id=2818868">Data Flow Testing for Virtual Prototypes</a></td>
+            <td>DATE</td>
+            <td>2017</td>
+            <td>Test Generation</td>
+            <td>Muhammad Hassan, Vladimir Herdt, Hoang M. Le, Mingsong Chen, Daniel Große, Rolf Drechsler</td>
+            <td>Data Flow Coverage for System C</td>
+        </tr>
+        
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=2818868">Dynamic Data Flow Testing of Object Oriented Systems</a></td>
+			<td>ICSE</td>
+			<td>2015</td>
+			<td>Test Generation</td>
+			<td>Giovanni Denaro, Alessandro Margara, Mauro Pezze, Mattia
+				Vivanti</td>
+			<td>Dynamic Data Flow Analysis; Genetic Algorithm; RT</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=2818834">Combining Symbolic Execution and Model Checking for Data Flow Testing</a></td>
+			<td>ICSE</td>
+			<td>2015</td>
+			<td>Test Generation</td>
+			<td>Ting Su, Zhoulai Fu, Geguang Pu, Jifeng He, Zhendong Su</td>
+			<td>Symbolic Execution,Model Checking, RT</td>
+		</tr>
+        <tr>
+            <td><a href="http://dl.acm.org/citation.cfm?id=2729407">An approach and tool for measurement of state variable based data-flow test coverage for aspect-oriented programs</a></td>
+            <td>IST Journal</td>
+            <td>2015</td>
+            <td></td>
+            <td>Fadi Wedyan, Sudipto Ghosh, Leo R. Vijayasarathy</td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><a href="https://www.researchgate.net/publication/263003365_Automatic_Generation_of_Data_Flow_Test_Paths_using_a_Genetic_Algorithm">Automatic Generation of Data Flow Test Paths using a Genetic Algorithm</a></td>
+			<td>IJCA Journal</td>
+			<td>2014</td>
+			<td>Test Generation</td>
+			<td>Moheb R. Girgis,Ahmed S. GhidukEman, H. Abd-elkawy</td>
+			<td>Genetic Algorithm;RT</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=2591079&dl=ACM&coll=DL&CFID=566001170&CFTOKEN=26707409">Dynamic data-flow testing</a></td>
+			<td>ICSE</td>
+			<td>2014</td>
+			<td></td>
+			<td>Mattia Vivanti</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=2624526">On the right objectives of data flow testing</a></td>
+			<td>ICST</td>
+			<td>2014</td>
+			<td>Data-flow Analysis</td>
+			<td>Giovanni Denaro, Mauro Pezz{\`e}, Mattia Vivanti</td>
+			<td>Dynamic/Static Data Flow Analysis</td>
+		</tr>
+        <tr>
+            <td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6823868&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6823868">Data-flow testing in the large</a></td>
+            <td>ICST</td>
+            <td>2014</td>
+            <td>Coverage Tracking</td>
+            <td>Roberto Paulo Andrioli de Araujo,Marcos Lordello Chaim</td>
+            <td>Bitset Algorithm</td>
+        </tr>
+        
+        <tr>
+            <td><a href="http://www.each.usp.br/marceloeler/papers/Eler-Endo-Durelli-SBQS2014.pdf">Covering User-Defined Data-flow Test Requirements Using Symbolic Execution</a></td>
+            <td>SBQS</td>
+            <td>2014</td>
+            <td>Test Generation</td>
+            <td>Marcelo Medeiros Eler,Andre Takeshi Endo,Vinicius Durelli</td>
+            <td>Symbolic Execution</td>
+        </tr>
+        
+		<tr>
+			<td><a href="http://ppgsi.each.usp.br/arquivos/RelTec/PPgSI-001_2013.pdf">Proof of correctness of the bitwise algorithm for intra-procedural data-flow testing coverage</a></td>
+			<td>Technical Report</td>
+			<td>2013</td>
+			<td>Proof</td>
+			<td>Chaim Marcos Lordello, de Araujo Roberto Paulo Andrioli</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6698890&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6698890">Search-based data-flow test generation</a></td>
+			<td>ISSRE</td>
+			<td>2013</td>
+			<td>Test Generation</td>
+			<td>Mattia Vivanti, Andre Mis, Alessandra Gorla, Gordon Fraser</td>
+			<td>Genetic Algorithm</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=2486812">Comparing multi-point stride coverage and dataflow coverage</a></td>
+			<td>ICSE</td>
+			<td>2013</td>
+			<td>New Coverage</td>
+			<td>Mohammad Mahdi Hassan, James H. Andrews</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=2662443&dl=ACM&coll=DL&CFID=566001170&CFTOKEN=26707409">Quantifying the Complexity of Dataflow Testing</a></td>
+			<td>AST</td>
+			<td>2013</td>
+			<td>quantify complexity</td>
+			<td>Giovanni Denaro, Mauro Pezz\`{e},Mattia Vivanti</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://www.sciencedirect.com/science/article/pii/S0020019013000537">An efficient bitwise algorithm for intra-procedural data-flow testing coverage</a></td>
+			<td>IPL</td>
+			<td>2013</td>
+			<td>Coverage Tracking</td>
+			<td>Marcos Lordello Chaim,Roberto Paulo Andrioli de Araujo</td>
+			<td>Bitset Algorithm(BA); matrix-based (MB), demand-driven (DD)</td>
+		</tr>
+        <tr>
+            <td><a href="http://www.ijltet.org/wp-content/uploads/2013/04/42.pdf">A comparative study of data flow testing techniques</a></td>
+            <td>IJLTET</td>
+            <td>2013</td>
+            <td>Comparative Study</td>
+            <td>Swati Sarraf, Farah DeebaHasan, Naveen Garg</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="http://dl.acm.org/citation.cfm?id=2336759">State Aware Test Case Regeneration for Improving Web
+                Application Test Suite Coverage and Fault Detection</a></td>
+            <td>ISSTA</td>
+            <td>2012</td>
+            <td>Application</td>
+            <td>Nadia Alshahwan, Mark Harman</td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><a href="http://link.springer.com/chapter/10.1007%2F978-3-642-14825-5_1">Automatic Test Data Generation using Data Flow Information</a></td>
+			<td>Dogus University Journal</td>
+			<td>2011</td>
+			<td>Test Generation</td>
+			<td>Abdelaziz Khamis,Reem Bahgat,Rana Abdelaziz</td>
+			<td>dynamic domain reduction (DDR)</td>
+		</tr>
+		<tr>
+			<td><a href="http://citeseerx.ist.psu.edu/viewdoc/citations;jsessionid=DD4B9F780129D739B75F11B0F5A5DC0E?doi=10.1.1.359.7280">A Hybrid PSO Approach to Automate Test Data Generation for Data Flow Coverage with Dominance Concepts</a></td>
+			<td>JAST Journal</td>
+			<td>2011</td>
+			<td>Test Generation</td>
+			<td>Sanjay Singla,Dharminder Kumar,H M Rai,Priti Singla</td>
+			<td>Optimization Algorithm (PSO), GA</td>
+		</tr>
+		<tr>
+			<td><a href="http://connection.ebscohost.com/c/articles/82589784/automatic-test-data-generation-data-flow-coverage-using-soft-computing-approach">An Automatic Test Data Generation for Data Flow Coverage Using Soft Computing Approach</a></td>
+			<td>IJRRCS</td>
+			<td>2011</td>
+			<td>Test Generation</td>
+			<td>Sanjay Singla,Priti Singla ,H M Rai</td>
+			<td>Optimization Algorithm (PSO), GA</td>
+		</tr>
+        
+        <tr>
+            <td><a href="https://dspace.library.colostate.edu/bitstream/handle/10217/48181/Wedyan_colostate_0053A_10517.pdf?sequence=1&isAllowed=y">Testing with state variable data-flow criteria for aspect-oriented programs</a></td>
+            <td>Ph.D theis</td>
+            <td>2011</td>
+            <td></td>
+            <td>Fadi Wedyan</td>
+            <td></td>
+        </tr>
+
+        
+        <tr>
+            <td><a href="http://link.springer.com/chapter/10.1007%2F978-3-642-21393-9_2">A Comparison of Dataflow and Mutation Testing of Java Methods</a></td>
+            <td>DCS</td>
+            <td>2011</td>
+            <td>Test Effectiveness</td>
+            <td>Ilona Bluemke, Karol Kulesza</td>
+            <td></td>
+        </tr>
+        
+		<tr>
+			<td><a href="http://onlinelibrary.wiley.com/doi/10.1002/stvr.417/abstract">Testing Coupling Relationships in Object-oriented Programs</a></td>
+			<td>STVR</td>
+			<td>2010</td>
+			<td>extend data flow criterion in OO</td>
+			<td>Alexander, Roger T. and Offutt, Jeff and Stefik, Andreas</td>
+			<td>RT</td>
+		</tr>
+        <tr>
+            <td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5634310&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5634310">A Dataflow Testing Approach for Aspect-Oriented Programs</a></td>
+            <td>HASE</td>
+            <td>2010</td>
+            <td></td>
+            <td>Fadi Wedyan and Sudipto Ghosh</td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><a href="http://www.unicse.org/october2010/A%20new%20software%20data-flow%20testing%20approach%20via%20ant%20colony%20algorithms.pdf">A New Software Data-Flow Testing Approach via Ant Colony Algorithms</a></td>
+			<td>UJCSET</td>
+			<td>2010</td>
+			<td>Test Generation</td>
+			<td>Ahmed S. Ghiduk</td>
+			<td>Ant Colony Algorithm (ACO)</td>
+		</tr>
+		<tr>
+			<td><a href="http://link.springer.com/chapter/10.1007%2F978-3-642-14825-5_1">Automatic Test Data Generation for Data Flow Testing Using
+				Particle Swarm Optimization</a></td>
+			<td>IC3</td>
+			<td>2010</td>
+			<td>Test Generation</td>
+			<td>Narmada Nayak,Durga Prasad Mohapatra</td>
+			<td>Optimization Algorithm (PSO), GA</td>
+		</tr>
+		<tr>
+			<td><a href="http://www.genetic-programming.org/hc2011/10-Miraz/Miraz-Thesis-Paper.pdf">Evolutionary Testing of Stateful Systems: a Holistic
+				Approach</a></td>
+			<td>Ph.D thesis</td>
+			<td>2010</td>
+			<td>Test Generation</td>
+			<td>Matteo Miraz</td>
+			<td>Genetic Algorithm</td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5358791&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5358791">Checking Model Consistency using Data-Flow Testing</a></td>
+			<td>APSEC</td>
+			<td>2009</td>
+			<td>Model Consistency</td>
+			<td>Wang, Chen-Wei and Cavarra, Alessandra</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=1555021">Lightweight fault-localization using multiple coverage types</a></td>
+			<td>ICSE</td>
+			<td>2009</td>
+			<td>Fault Localization</td>
+			<td>Ra{\'{u}}l A. Santelices ,James A. Jones,Yanbing Yu,Mary
+				Jean Harrold</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5261032&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5261032">Dataflow testing of java programs with DFC</a></td>
+			<td>CEE-SET</td>
+			<td>2009</td>
+			<td>Tool</td>
+			<td>Bluemke Ilona,Rembiszewski Artur</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5261032&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5261032">Dataflow approach to testing Java programs</a></td>
+			<td>ICDCS</td>
+			<td>2009</td>
+			<td>Tool</td>
+			<td>Bluemke Ilona,Rembiszewski Artur</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=1595720">Data flow testing of service choreography</a></td>
+			<td>FSE</td>
+			<td>2009</td>
+			<td>Application</td>
+			<td>Mei, Lijun and Chan, W. K. and Tse, T. H.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5420148&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5420148">Automatic test data generation model by combining dataflow analysis with genetic algorithm</a></td>
+			<td>JCPC</td>
+			<td>2009</td>
+			<td>Test Generation</td>
+			<td>Mingjie Deng,Rong Chen, Zhenjun Du</td>
+			<td>Genetic Algorithm</td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5071042&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5071042">DaTeC: Contextual data flow testing of java classes</a></td>
+			<td>ICSE</td>
+			<td>2009</td>
+			<td>Tool</td>
+			<td>Giovanni Denaro,Alessandra Gorla,Mauro Pezz{\`{e}}</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=4814148&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D4814148">Data Flow Testing of Service-oriented Workflow Applications</a></td>
+			<td>ICSE</td>
+			<td>2008</td>
+			<td>Application</td>
+			<td>Mei, Lijun and Chan, W.K. and Tse, T.H.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/abstractAuthors.jsp?arnumber=4567010">Hybridizing Evolutionary Testing with Artificial Immune
+				Systems and Local Search</a></td>
+			<td>ICST</td>
+			<td>2008</td>
+			<td>Test Generation</td>
+			<td>Konstantinos Liaskos, Marc Roper</td>
+			<td>Genetic Algorithm, AIS</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=1792862">Contextual Integration Testing of Classes</a></td>
+			<td>FASE</td>
+			<td>2008</td>
+			<td>Contextual data-flow analysis</td>
+			<td>Giovanni Denaro,Alessandra Gorla,Mauro Pezz{\`{e}}</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=4344102&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D4344102">Automatic Test-Data Generation: An Immunological Approach</a></td>
+			<td>TAIC PART</td>
+			<td>2007</td>
+			<td>Test Generation</td>
+			<td>Konstantinos Liaskos, Marc Roper</td>
+			<td>Genetic Algorithm, AIS</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=1277183">Investigating data-flow coverage of classes using
+				evolutionary algorithms</a></td>
+			<td>GECCO</td>
+			<td>2007</td>
+			<td>Test Generation</td>
+			<td>Konstantinos Liaskos, Marc Roper, Murray Wood</td>
+			<td>Genetic Algorithm</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=1321682">Efficiently monitoring data-flow test coverage</a></td>
+			<td>ASE</td>
+			<td>2007</td>
+			<td>Test Generation</td>
+			<td>Santelices Raul, Harrold Mary Jean</td>
+			<td>Collateral Coverage</td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=4425835&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel5%2F4425817%2F4425818%2F04425835.pdf%3Farnumber%3D4425835">Using Genetic Algorithms to Aid Test-Data Generation for
+				Data-Flow Coverage</a></td>
+			<td>APSEC</td>
+			<td>2007</td>
+			<td>Test Generation</td>
+			<td>Ahmed S. Ghiduk,Mary Jean Harrold,Moheb R. Girgis</td>
+			<td>Genetic Algorithm</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=1188899&dl=ACM&coll=DL&CFID=566001170&CFTOKEN=26707409">Subsumption of program entities for efficient coverage and
+				monitoring</a></td>
+			<td>SOQUA</td>
+			<td>2006</td>
+			<td>Test Generation</td>
+			<td>Ra{\'{u}}l A. Santelices, Saurabh Sinha,Mary Jean Harrold</td>
+			<td>Collateral Coverage</td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1508082&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1508082">An agent-based data-flow testing approach for web applications</a></td>
+			<td>IST</td>
+			<td>2006</td>
+			<td>Application</td>
+			<td>Qi, Yu and Kung, David and Wong, Eric</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://www.sciencedirect.com/science/article/pii/S0950584905001114">The collateral coverage of data flow criteria when branch
+				testing</a></td>
+			<td>IST</td>
+			<td>2006</td>
+			<td>Test Generation</td>
+			<td>Nicos Malevris, Derek F. Yates</td>
+			<td>Collateral Coverage</td>
+		</tr>
+		<tr>
+			<td><a href="http://www.sciencedirect.com/science/article/pii/S0167642304001856">Coverage testing of Java programs and components</a></td>
+			<td>JSCP</td>
+			<td>2005</td>
+			<td>Coverage Tracking</td>
+			<td>Vincenzi Auri Marcelo Rizzo, Maldonado Jos{\'e} Carlos,Wong
+				W Eric, Delamaro M{\'a}rcio Eduardo</td>
+			<td>Last definition</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=1062496">Demand-driven structural testing with dynamic
+				instrumentation</a></td>
+			<td>ICSE</td>
+			<td>2005</td>
+			<td>Coverage Tracking</td>
+			<td>Jonathan Misurda,James A. Clause,Juliya L. Reed,Bruce R.
+				Childers,Mary Lou Soffa</td>
+			<td>Demand-driven</td>
+		</tr>
+		<tr>
+			<td><a href="http://link.springer.com/chapter/10.1007%2F978-3-540-31985-6_17">Jazz: A tool for demand-driven structural testing</a></td>
+			<td>CC</td>
+			<td>2005</td>
+			<td>Coverage Tracking</td>
+			<td>Jonathan Misurda,James A. Clause,Juliya L. Reed,Bruce R.
+				Childers,Mary Lou Soffa</td>
+			<td>Demand-driven</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=2101093">Automated Generation and Evaluation of Dataflow-Based Test
+				Data for Object-Oriented Software</a></td>
+			<td>QoSA/SOQUA</td>
+			<td>2005</td>
+			<td>Test Generation</td>
+			<td>Norbert Oster</td>
+			<td>Genetic Algorithm</td>
+		</tr>
+		<tr>
+			<td><a href="http://link.springer.com/chapter/10.1007%2F978-3-642-14825-5_1">Automatic Test Data Generation for Data Flow Testing Using a
+				Genetic Algorithm</a></td>
+			<td>JUCS Journal</td>
+			<td>2005</td>
+			<td>Test Generation</td>
+			<td>Moheb R. Girgis</td>
+			<td>Genetic Algorithm,RT</td>
+		</tr>
+        <tr>
+            <td><a href="http://link.springer.com/chapter/10.1007%2F11430230_3">Dependence Testing: Extending Data Flow Testing with Control Dependence</a></td>
+            <td>TestCom</td>
+            <td>2005</td>
+            <td></td>
+            <td>Hyoung Seok Hong and
+                Hasan Ural</td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=951937">The construction of contextual def-use associations for
+				object-oriented systems</a></td>
+			<td>TSE</td>
+			<td>2003</td>
+			<td>Data-flow Analysis</td>
+			<td>Souter, Amie L. and Pollock, Lori L.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1201203&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1201203">Data Flow Testing as Model Checking</a></td>
+			<td>ICSE</td>
+			<td>2003</td>
+			<td>Test Generation</td>
+			<td>Hyoung Seok Hong, Sung Deok Cha, Insup Lee, Oleg Sokolsky,
+				Hasan Ural</td>
+			<td>Model Checking</td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1245340&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1245340">Data-flow-based unit testing of aspect-oriented programs</a></td>
+			<td>COMPSAC</td>
+			<td>2003</td>
+			<td>Application</td>
+			<td>Jianjun Zhao</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1245299&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel5%2F32%2F27901%2F01245299.pdf%3Farnumber%3D1245299">Using Spanning Sets for Coverage Testing</a></td>
+			<td>TSE</td>
+			<td>2003</td>
+			<td>Test Generation</td>
+			<td>Marr{\'e} Martina, Bertolino Antonia</td>
+			<td>Collateral Coverage</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=857329">Interclass Testing of Object Oriented Software</a></td>
+			<td>ICECCS</td>
+			<td>2002</td>
+			<td>Test Generation</td>
+			<td>Martena, Vincenzo and Orso, Alessandro and Pezz{\'e}, Mauro</td>
+			<td>(static) Symbolic Execution; Automated Deduction</td>
+		</tr>
+		<tr>
+			<td>Automatic test generation from specifications for
+				control-flow and data-flow coverage criteria</td>
+			<td>Monterey Workshop</td>
+			<td>2001</td>
+			<td>Model Consistency</td>
+			<td>Hong, Hyoung Seok, and Insup Lee</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=883773&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel5%2F7095%2F19119%2F00883773.pdf%3Farnumber%3D883773">Object-Based Data Flow Testing of Web Applications</a></td>
+			<td>APAQS</td>
+			<td>2000</td>
+			<td>Application</td>
+			<td>Liu, Chien-Hung and Kung, David C. and Hsia, Pei and Hsu,
+				Chih-Tung</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=348870">Automated testing of classes</a></td>
+			<td>ISSTA</td>
+			<td>2000</td>
+			<td>Test Generation</td>
+			<td>Ugo A. Buy,Alessandro Orso ,Mauro Pezz{\`e}</td>
+			<td>Symbolic Execution, Backward Deduction</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=2294874">Test generation based on control and data dependencies
+				within system specifications in SDL</a></td>
+			<td>CC</td>
+			<td>2000</td>
+			<td>Application</td>
+			<td>Hasan Ural,Kassem Saleh, Alan W. Williams</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.9.1341">A test sequence selection method for statecharts</a></td>
+			<td>STVR</td>
+			<td>2000</td>
+			<td>Application</td>
+			<td>Hyoung Seok Hong, Young Gon Kim, Sung Deok Cha, Doo{-}Hwan
+				Bae,Hasan Ural</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=782002">A static measure of a subset of intra-procedural data flow
+				testing coverage based on node coverage</a></td>
+			<td>CASCON</td>
+			<td>1999</td>
+			<td>Test Generation</td>
+			<td>Ettore Merlo,Giuliano Antoniol</td>
+			<td>Collateral Coverage</td>
+		</tr>
+		<tr>
+			<td><a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.28.8690">Data-flow-based testing of object-oriented libraries</a></td>
+			<td>TR</td>
+			<td>1999</td>
+			<td>Data-flow Analysis</td>
+			<td>BRamkrishna Chatterjee,Barbara G. Ryder</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=288298">Further Empirical Studies of Test Effectiveness</a></td>
+			<td>FSE</td>
+			<td>1998</td>
+			<td>Test Effectiveness</td>
+			<td>Phyllis G. Frankl, Oleg Iakounenko</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=261067">All-Uses versus Mutation Testing: An Experimental Comparison
+				of Effectiveness</a></td>
+			<td>JSS</td>
+			<td>1997</td>
+			<td>Test Effectiveness</td>
+			<td>Frankl, Phyllis G. and Weiss, Stewart N. and Hu, Cang</td>
+			<td></td>
+		</tr>
+        <tr>
+            <td><a href="http://www.cs.virginia.edu/~soffa/Soffa_Pubs_all/Conferences/Refining.Bodick.1997.pdf">Refining Data Flow Information Using Infeasible Paths</a></td>
+            <td>ACM Software Engineering Notes</td>
+            <td>1997</td>
+            <td>Data Flow Analysis</td>
+            <td>Rastislav Bod ́ık, Rajiv Gupta, and Mary Lou Soffa</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="http://static.aminer.org/pdf/PDF/000/361/825/a_demand_driven_analyzer_for_data_flow_testing_at_the.pdf">A Demand-driven Analyzer for Data Flow Testing at the Integration Level</a></td>
+            <td>ICSE</td>
+            <td>1996</td>
+            <td>Data Flow Analysis</td>
+            <td>Evelyn Duesterwald, Rajiv Gupta, and Mary Lou Soffa</td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=226312">Unconstrained duals and their use in achieving all-uses
+				coverage</a></td>
+			<td>ISSTA</td>
+			<td>1996</td>
+			<td>Test Generation</td>
+			<td>Martina Marré,Antonia Bertolino</td>
+			<td>Collateral Coverage</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=229760">An Experimental Evaluation of Data Flow and Mutation Testing</a></td>
+			<td>JSPE</td>
+			<td>1996</td>
+			<td>Test Effectiveness</td>
+			<td>Offutt, A. Jefferson and Pan, Jie and Tewary, Kanupriya and
+				Zhang, Tong</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://link.springer.com/article/10.1007%2FBF00404650">Fault detection effectiveness of mutation and data flow
+				testing</a></td>
+			<td>SQJ</td>
+			<td>1995</td>
+			<td>Test Effectiveness</td>
+			<td>W. Eric Wong, Aditya P. Mathur</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=497652&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D497652">Fault Localization using Execution Slices and Dataflow Tests</a></td>
+			<td>ISSRE</td>
+			<td>1995</td>
+			<td>Fault Localization</td>
+			<td>Hiralal Agrawal,Joseph R. Horga,Saul London, W. Eric Wong</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://onlinelibrary.wiley.com/doi/10.1002/stvr.4370040104/abstract">An empirical comparison of data flow and mutation-based test
+				adequacy criteria</a></td>
+			<td>STVR</td>
+			<td>1994</td>
+			<td>Test Complexity</td>
+			<td>Aditya P. Mathur and W. Eric Wong</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=286418&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D286418">Interprocedural Def-Use Associations for {C} Systems with
+				Single Level Pointers</a></td>
+			<td>TSE</td>
+			<td>1994</td>
+			<td>Data-flow Analysis</td>
+			<td>Pande, H. D., Landi, W. A. ,Ryder, B. G.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=174663">Efficient computation of interprocedural definition-use
+				chains</a></td>
+			<td>TPLS</td>
+			<td>1994</td>
+			<td>Data-flow Analysis</td>
+			<td>Harrold, Mary Jean and Soffa, Mary Lou</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=257766">Experiments of the effectiveness of dataflow- and
+				controlflow-based test adequacy criteria</a></td>
+			<td>ICSE</td>
+			<td>1994</td>
+			<td>Test Effectiveness</td>
+			<td>Monica Hutchins, Herbert Foster, Tarak Goradia, Thomas J.
+				Ostrand</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=288300&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel2%2F958%2F7174%2F00288300.pdf%3Farnumber%3D288300">Performing Data Flow Testing in Parallel</a></td>
+			<td>IPPS</td>
+			<td>1994</td>
+			<td>Coverage Tracking</td>
+			<td>Mary Jean Harrold</td>
+			<td>parallelized DFT</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=195402">Performing data flow testing on classes</a></td>
+			<td>FSE</td>
+			<td>1994</td>
+			<td>Classes Testing</td>
+			<td>Mary Jean Harrold, Gregg Rothermel</td>
+			<td></td>
+		</tr>
+        <tr>
+            <td><a href="http://www.cs.ucr.edu/~gupta/research/Publications/Comp/p270-harrold.pdf">A Methodology for Controlling the Size of a Test Suite</a></td>
+            <td>TOSEM</td>
+            <td>1993</td>
+            <td>Collateral Coverage</td>
+            <td>M. Jean Harrold, Rajiv Gupta, and Mary Lou Soffa</td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=241773&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D241773">More Experience with Data Flow Testing</a></td>
+			<td>TSE</td>
+			<td>1993</td>
+			<td>Test Effectiveness/Cost</td>
+			<td>Weyuker, E. J.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=366924&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel2%2F2963%2F8406%2F00366924.pdf%3Farnumber%3D366924">Interprocedural Dynamic Slicing Applied to Interprocedural
+				Data Flow Testing</a></td>
+			<td>ICSM</td>
+			<td>1993</td>
+			<td>Coverage Tracking</td>
+			<td>Mariam Kamkar,Peter Fritzson,Nahid Shahmehri</td>
+			<td>Dynamic Program Slicing</td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=238581&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel1%2F32%2F6133%2F00238581.pdf%3Farnumber%3D238581">An experimental comparison of the effectiveness of branch
+				testing and data flow testing</a></td>
+			<td>TSE</td>
+			<td>1993</td>
+			<td>Test Effectiveness</td>
+			<td>Frankl, P. G., Weiss, S. N.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=154329">A study of the effectiveness of control and data flow
+				testing strategies</a></td>
+			<td>JSS</td>
+			<td>1993</td>
+			<td>Test Effectiveness</td>
+			<td>Lynn M Foreman, Stuart H Zweben</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="https://www.researchgate.net/publication/220516426_Using_Symbolic_Execution_and_Data_Flow_Criteria_to_Aid_Test_Data_Selection">Using symbolic execution and data flow criteria to aid test data selection</a></td>
+			<td>STVR</td>
+			<td>1993</td>
+			<td>Test Generation</td>
+			<td>Moheb Girgis</td>
+			<td>Symbolic Execution</td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=242534&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel2%2F435%2F6237%2F00242534.pdf%3Farnumber%3D242534">Data flow testing of parallelized code</a></td>
+			<td>ICSM</td>
+			<td>1992</td>
+			<td>Application</td>
+			<td>Mary Jean Harrold and Brian A. Malloy</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=205829&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D205829">ATAC: A data flow coverage testing tool for C</a></td>
+			<td>SAQSDT</td>
+			<td>1992</td>
+			<td>Coverage Tracking</td>
+			<td>Horgan, J. R.,London</td>
+			<td>Last definition</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=120815">Data flow coverage and the C language</a></td>
+			<td>STAV</td>
+			<td>1991</td>
+			<td>Tool</td>
+			<td>Horgan, J. R.,London, S.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>POKE-TOOL-A Tool to support Structural Program Testing based
+				on Data Flow Analysis</td>
+			<td>Journal</td>
+			<td>1991</td>
+			<td>Coverage Tracking</td>
+			<td>Chaim ML</td>
+			<td>Automata</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=120814">Data flow-based test adequacy analysis for languages with
+				pointers</a></td>
+			<td>STAV</td>
+			<td>1991</td>
+			<td>Coverage Tracking</td>
+			<td>Ostrand Thomas J, Weyuker Elaine J</td>
+			<td>Memory Checking</td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=81304">Data Flow Testing in STAD</a></td>
+			<td>JSS</td>
+			<td>1990</td>
+			<td>Tool</td>
+			<td>Laski, J.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=44376&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D44376">The Cost of Data Flow Testing: An Empirical Study</a></td>
+			<td>TSE</td>
+			<td>1990</td>
+			<td>Test Complexity/Cost</td>
+			<td>Elaine J. Weyuker</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=41326&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel1%2F32%2F1581%2F00041326.pdf%3Farnumber%3D41326">A formal evaluation of data flow path selection criteria</a></td>
+			<td>TSE</td>
+			<td>1989</td>
+			<td>Analysis</td>
+			<td>Lori A. Clarke,Andy Podgurski,Debra J. Richardson,Steven J.
+				Zeil</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5350&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5350">STAD-a system for testing and debugging: user perspective</a></td>
+			<td>STVA</td>
+			<td>1988</td>
+			<td>Tool</td>
+			<td>Korel, B. and Laski, J.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5374&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel2%2F211%2F276%2F00005374.pdf%3Farnumber%3D5374">An empirical study of the complexity of data flow testing</a></td>
+			<td>STVA</td>
+			<td>1988</td>
+			<td>Test Complexity/Cost</td>
+			<td>EJ Weyuker</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6194&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6194">An Applicable Family of Data Flow Testing Criteria</a></td>
+			<td>TSE</td>
+			<td>1988</td>
+			<td>Theory</td>
+			<td>PHYLLIS G. FRANKL, ELAINE J. WEYUKER</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=913643">The use of data flow information for the selection and
+				evaluation of software test data</a></td>
+			<td>Ph.D thesis</td>
+			<td>1987</td>
+			<td>Coverage Tracking</td>
+			<td>Frankl F. G.</td>
+			<td>DFA</td>
+		</tr>
+		<tr>
+			<td><a href="https://archive.org/details/dataflowtestingi00fran">Data flow testing in the presence of unexecutable paths</a></td>
+			<td>TR</td>
+			<td>1986</td>
+			<td></td>
+			<td>PG Frankl, EJ Weyuker</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="https://archive.org/details/assetsystemtosel00fran">Asset: A system to select and evaluate tests</a></td>
+			<td>Book</td>
+			<td>1985</td>
+			<td>Tool</td>
+			<td>Frankl Phyllis G, Weiss Stewart N,Weyuker Elaine J</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=319499">A Tool for Data Flow Oriented Program Testing</a></td>
+			<td>CSDTTA</td>
+			<td>1985</td>
+			<td>Tool</td>
+			<td>Korel B.,Laski J.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=319501">A Data Flow Testing Tool</a></td>
+			<td>CSDTTA</td>
+			<td>1985</td>
+			<td>Tool</td>
+			<td>Frankl, Phyllis G.,Weyuker, Elaine J.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1702019&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1702019">Selecting Software Test Data Using Data Flow Information</a></td>
+			<td>TSE</td>
+			<td>1985</td>
+			<td>Theory</td>
+			<td>Sandra Rapps, Elaine J. Weyuker</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=1662">The Complexity of Data Flow Criteria for Test Data Selection</a></td>
+			<td>IPL</td>
+			<td>1984</td>
+			<td>Theory</td>
+			<td>Weyuker, Elaine J.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1703063&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel5%2F32%2F35934%2F01703063.pdf%3Farnumber%3D1703063">A Data Flow Oriented Program Testing Strategy</a></td>
+			<td>TSE</td>
+			<td>1983</td>
+			<td>Theory</td>
+			<td>Laski, J. W. and Korel, B.</td>
+			<td></td>
+		</tr>
+        <tr>
+            <td><a href="http://dl.acm.org/citation.cfm?id=807769">Data Flow Analysis Techniques for Test Data Selection</a></td>
+            <td>ICSE</td>
+            <td>1982</td>
+            <td>Theory</td>
+            <td>Rapps, Sandra and Weyuker, Elaine J.</td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><a href="https://www.researchgate.net/publication/220535893_A_Data_Flow_Analysis_Approach_to_Program_Testing">A Data Flow Analysis Approach to Program Testing</a></td>
+			<td>Australian Computer Journal</td>
+			<td>1976</td>
+			<td>Theory</td>
+			<td>P. M. Herman</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><a href="http://dl.acm.org/citation.cfm?id=360025">A Program Data Flow Analysis Procedure</a></td>
+			<td>Communications of the ACM</td>
+			<td>1976</td>
+			<td>Data-flow Analysis</td>
+			<td>Allen, F. E. and Cocke, J.</td>
+			<td></td>
+		</tr>
+	<!--
+		<tr>
+			<td>Using Mutation Analysis for Assessing and Comparing Testing
+				Coverage Criteria</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Classifying Data Dependences in the Presence of Pointers for
+				Program Comprehension, Testing, and Debugging</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Detection of data flow anomaly through program
+				instrumentation</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+  -->
+
+	</table>
+
+
+	<h2><a name="references"></a>Tools</h2>
+    <p>A list of tools related to data flow testing: </p>
+    
+    <table border="1">
+        <tr>
+            <th>Tool Name</th>
+            <th>Testing Phase</th>
+            <th>Approach</th>
+            <th>Comments</th>
+        </tr>
+        
+        <!-- test generation tool -->
+        <tr>
+            <td><a href="http://www.cs.cmu.edu/~modelcheck/smv.html">SMV</a></td>
+            <td>Test Generation</td>
+            <td>Model Checking</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="http://www3.nd.edu/~rsanteli/duaf/">DuaF</a></td>
+            <td>Test Generation, Coverage Tracking</td>
+            <td>Collateral Coverage, Coverage Inference</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://code.google.com/p/testful/">Testful</a></td>
+            <td>Test Generation</td>
+            <td>Genetic Algorithm</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="http://www.evosuite.org/">Evosuite</a></td>
+            <td>Test Generation</td>
+            <td>Genetic Algorithm</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="http://www.lab205.org/caut">CAUT</a></td>
+            <td>Test Generation</td>
+            <td>(Dynamic) Symbolic Execution</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="http://forge.ispras.ru/projects/blast">BLAST</a></td>
+            <td>Test Generation</td>
+            <td>Model Checking</td>
+            <td>The newest version is 2.7.2. An old <a href="http://mtc.epfl.ch/software-tools/blast/index-epfl.php">tool</a> page.</td>
+        </tr>
+        <tr>
+            <td><a href="http://cpachecker.sosy-lab.org/">CPAchecker</a></td>
+            <td>Test Generation</td>
+            <td>Model Checking</td>
+            <td></td>
+        </tr>
+        
+        <!-- coverage tool   -->
+        <tr>
+            <td><a href="http://invisible-island.net/atac/atac.html">ATAC</a></td>
+            <td>Coverage Tracking</td>
+            <td>Last Definition</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="http://sourceforge.net/projects/coverlipse/">Coverlipse</a></td>
+            <td>Coverage Tracking</td>
+            <td>Path Recording</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://code.google.com/p/jabutimetrics/">JaBUTi</a></td>
+            <td>Coverage Tracking</td>
+            <td>Last Definition</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="http://jmockit.github.io/">JMockit</a></td>
+            <td>Coverage Tracking</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/saeg/ba-dua">BA-DUA</a></td>
+            <td>Coverage Tracking</td>
+            <td>Bitwise Algorithm</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>DFC</td>
+            <td>Coverage Tracking</td>
+            <td>-</td>
+            <td>The tool is available by email request.</td>
+        </tr>
+
+        
+    </table>
+    
+    <p>Last modified: 2017.1.</p>
+
+    </body>
+</html>
