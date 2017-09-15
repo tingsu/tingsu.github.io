@@ -1,1 +1,168 @@
-Thanks for your interests in Stoat, please click <a href="https://github.com/tingsu/Stoat">this</a>.<br><br>
+<h2 style="padding-left: 300px;">&nbsp;</h2>
+<h2 style="padding-left: 300px;"><strong>Guided, Stochastic Model-Based GUI Testing of Android Apps</strong></h2>
+<h3 style="padding-left: 300px;"><strong>Stoat's Work Flow</strong></h3>
+<p style="padding-left: 300px; padding-right: 300px; text-align: justify;"><span style="font-size: medium;"><strong>Stoat</strong> (<strong>STO</strong>chastic model <strong>A</strong>pp <strong>T</strong>ester) is a novel guided approach to perform stochastic model-based testing on Android Apps. The idea is to&nbsp;<span style="background-color: transparent;">thoroughly test the func</span><span style="background-color: transparent;">tionalities of an app from its GUI model, and validate the app&rsquo;s&nbsp;</span><span style="background-color: transparent;">behavior by enforcing various user/system interactions.</span></span></p>
+<div style="display: block; text-align: center; margin-right: auto; margin-left: auto;"><a href="https://sites.google.com/site/stoat2017/stoat-s-work-flow/framework_detail.jpeg?attredirects=0"><img src="https://sites.google.com/site/stoat2017/stoat-s-work-flow/framework_detail.jpeg" border="0" /></a></div>
+<p style="padding-left: 300px; padding-right: 300px; text-align: justify;"><span style="font-size: medium;"><span style="background-color: transparent;">Stoat operates in a unique two-phase process to test an app: (1) construct a stochastic app model (in the form of stochastic finite state machine); and (2) iteratively mutate/refine the stochastic model (by perturbing the probability values of the model transitions), and guide test generation toward achieving high code, model coverage as well as exhibiting diverse event sequences.</span></span></p>
+<h3 style="padding-left: 300px;"><strong>Demo</strong></h3>
+<p style="padding-left: 300px; padding-right: 300px;"><span style="font-size: medium;">1. Model Construction:&nbsp;</span><span style="font-size: medium; background-color: transparent;">Stoat uses a dynamic analysis technique, enhanced by a weighted UI exploration strategy and static analysis, to effectively and efficiently construct app models.</span></p>
+<p style="padding-left: 300px; padding-right: 300px; text-align: center;"><span style="font-size: medium; background-color: transparent;"><iframe src="https://www.youtube.com/embed/v4UkJgdcWDQ" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></span></p>
+<div style="padding-left: 300px; padding-right: 300px;"><span style="font-size: medium;">2. Fuzz multiple apps on multiple devices.</span></div>
+<p style="padding-left: 300px; padding-right: 300px; text-align: center;"><span style="font-size: medium; background-color: transparent;"><iframe src="https://www.youtube.com/embed/Xk7A7wczLj0" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></span></p>
+<h3 style="padding-left: 300px;"><strong>Downloading Stoat</strong></h3>
+<p style="padding-left: 300px;">Download Stoat tool and user manual <a href="https://github.com/tingsu/Stoat">here</a>.</p>
+<h3 style="padding-left: 300px;"><strong>Result</strong></h3>
+<ul style="list-style-type: circle; padding-left: 330px;">
+<li><span style="font-size: medium;"><strong>Results on model construction</strong></span></li>
+</ul>
+<p style="padding-left: 330px; padding-right: 330px;">1. Statistics of the models produced by MobiGUITAR (the systematic strategy --- "M-S", the random strategy --- "M-R" ), PUMA ("PU"), and Stoat ("St") on the 93 open source apps. Note each tool is allocated with one hour for each app and is run on one emulator.</p>
+<p style="padding-left: 330px; padding-right: 330px;">* Line Coverage, #Model States, #Model Transitions.</p>
+<p style="text-align: justify;"><span style="padding-right: 300px;">&nbsp;</span></p>
+<div style="display: block; text-align: left; padding-left: 300px; padding-right: 300px;"><a href="https://sites.google.com/site/stoat2017/evaluation/model-construction-1/model_construction_comparison.jpg?attredirects=0"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://sites.google.com/site/stoat2017/evaluation/model-construction-1/model_construction_comparison.jpg" border="0" /></a></div>
+<div style="display: block; text-align: left; padding-left: 330px;">2. Comparison with <a href="https://sites.google.com/a/se.kaist.ac.kr/ymbaek-ase2016-gui-testing-android/home">AMOLA</a></div>
+<div style="display: block; text-align: left;">&nbsp;</div>
+<div style="display: block; text-align: left; padding-left: 330px; padding-right: 330px;">AMOLA is also a model-based testing tool for Android apps, which uses multi-level GUI comparison criteria. But the tool is&nbsp;<span style="background-color: transparent;">not publicly&nbsp;available, we compare AMOLA and Stoat on the same benchmark apps that it used in its paper.</span></div>
+<p style="padding-left: 330px; padding-right: 330px;">*Stoat use the similar criterion with AMOLA (C-Lv4)</p>
+<div style="display: block; text-align: left; padding-left: 330px; padding-right: 330px;"><span style="background-color: transparent;"><span style="background-color: transparent;"><span style="font-size: medium;">&nbsp;</span></span></span>
+<table style="border-collapse: collapse; border-color: #888888; border-width: 1px;" border="1" cellspacing="0">
+<tbody>
+<tr>
+<td style="text-align: center; width: 242px; height: 50px;"><span style="color: #444444;"><strong>&nbsp;App Name&nbsp; &nbsp;</strong></span></td>
+<td style="text-align: center; width: 143px; height: 50px;"><span style="color: #444444;"><strong>&nbsp;AMOLA<br />&nbsp;(#States)</strong></span></td>
+<td style="text-align: center; width: 141px; height: 50px;"><span style="color: #444444;"><strong>&nbsp;AMOLA <br />(#Transitions)</strong></span></td>
+<td style="text-align: center; width: 106px; height: 50px;"><span style="color: #444444;"><strong>&nbsp;Stoat <br />(#States)</strong></span></td>
+<td style="text-align: center; width: 128px; height: 50px;"><span style="color: #444444;"><strong>&nbsp;Stoat <br />(#Transitions)</strong></span></td>
+<td style="text-align: center; width: 161px; height: 50px;"><span style="color: #444444;"><strong>&nbsp;AMOLA<br />&nbsp;(Coverage)</strong></span></td>
+<td style="text-align: center; width: 227px; height: 50px;"><span style="color: #444444;"><strong>&nbsp;Stoat<br />&nbsp;(Coverage)</strong></span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">org.jtb.alogcat</td>
+<td style="text-align: center; width: 143px; height: 17px;">&nbsp;15</td>
+<td style="text-align: center; width: 141px; height: 17px;">&nbsp;247</td>
+<td style="text-align: center; width: 106px; height: 17px;">&nbsp;<span style="font-family: arial,sans,sans-serif; text-align: right;">10</span></td>
+<td style="text-align: center; width: 128px; height: 17px;">&nbsp;54</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;56%</td>
+<td style="text-align: center; width: 227px; height: 17px;"><span style="color: #3d85c6;">&nbsp;63%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">com.example.anycut</td>
+<td style="text-align: center; width: 143px; height: 17px;">&nbsp;8</td>
+<td style="text-align: center; width: 141px; height: 17px;">33</td>
+<td style="text-align: center; width: 106px; height: 17px;">&nbsp;7</td>
+<td style="text-align: center; width: 128px; height: 17px;">&nbsp;40</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;55%</td>
+<td style="text-align: center; width: 227px; height: 17px;"><span style="color: #3d85c6;">&nbsp;67%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">com.evancharlton.mileage</td>
+<td style="text-align: center; width: 143px; height: 17px;">69</td>
+<td style="text-align: center; width: 141px; height: 17px;">532</td>
+<td style="text-align: center; width: 106px; height: 17px;">&nbsp;30</td>
+<td style="text-align: center; width: 128px; height: 17px;">&nbsp;262</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;33%</td>
+<td style="text-align: center; width: 227px; height: 17px;"><span style="color: #3d85c6;">&nbsp;39%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">cri.sanity</td>
+<td style="text-align: center; width: 143px; height: 17px;">&nbsp;2</td>
+<td style="text-align: center; width: 141px; height: 17px;">&nbsp;7</td>
+<td style="text-align: center; width: 106px; height: 17px;">&nbsp;16</td>
+<td style="text-align: center; width: 128px; height: 17px;">&nbsp;202</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;N/A</td>
+<td style="text-align: center; width: 227px; height: 17px;">&nbsp;<span style="color: #3d85c6;">12%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">org.jessies.dalvikexplorer</td>
+<td style="text-align: center; width: 143px; height: 17px;">&nbsp;30</td>
+<td style="text-align: center; width: 141px; height: 17px;">&nbsp;301</td>
+<td style="text-align: center; width: 106px; height: 17px;">&nbsp;29</td>
+<td style="text-align: center; width: 128px; height: 17px;">&nbsp;348</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;64%</td>
+<td style="text-align: center; width: 227px; height: 17px;">&nbsp;<span style="color: #3d85c6;">74%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">i4nc4mp.myLock</td>
+<td style="text-align: center; width: 143px; height: 17px;">&nbsp;5</td>
+<td style="text-align: center; width: 141px; height: 17px;">51</td>
+<td style="text-align: center; width: 106px; height: 17px;">5</td>
+<td style="text-align: center; width: 128px; height: 17px;">&nbsp;51</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;11%</td>
+<td style="text-align: center; width: 227px; height: 17px;"><span style="color: #3d85c6;">&nbsp;28%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">com.bwx.bequick</td>
+<td style="text-align: center; width: 143px; height: 17px;">&nbsp;60</td>
+<td style="text-align: center; width: 141px; height: 17px;">250</td>
+<td style="text-align: center; width: 106px; height: 17px;">8</td>
+<td style="text-align: center; width: 128px; height: 17px;">&nbsp;132</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;39%</td>
+<td style="text-align: center; width: 227px; height: 17px;"><span style="color: #3d85c6;">40%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">com.nloko.android.syncmypix</td>
+<td style="text-align: center; width: 143px; height: 17px;">20</td>
+<td style="text-align: center; width: 141px; height: 17px;">96</td>
+<td style="text-align: center; width: 106px; height: 17px;">13</td>
+<td style="text-align: center; width: 128px; height: 17px;">76</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;17%</td>
+<td style="text-align: center; width: 227px; height: 17px;">&nbsp;<span style="color: #3d85c6;">21%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">net.mandaria.tippytipper</td>
+<td style="text-align: center; width: 143px; height: 17px;">&nbsp;13</td>
+<td style="text-align: center; width: 141px; height: 17px;">&nbsp;102</td>
+<td style="text-align: center; width: 106px; height: 17px;">&nbsp;17</td>
+<td style="text-align: center; width: 128px; height: 17px;">&nbsp;117</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;61%</td>
+<td style="text-align: center; width: 227px; height: 17px;">&nbsp;<span style="color: #3d85c6;">81%</span></td>
+</tr>
+<tr>
+<td style="width: 242px; height: 17px;">de.freewarepoint.whohasmystuff</td>
+<td style="text-align: center; width: 143px; height: 17px;">&nbsp;24</td>
+<td style="text-align: center; width: 141px; height: 17px;">&nbsp;143</td>
+<td style="text-align: center; width: 106px; height: 17px;">18</td>
+<td style="text-align: center; width: 128px; height: 17px;">103</td>
+<td style="text-align: center; width: 161px; height: 17px;">&nbsp;51%</td>
+<td style="text-align: center; width: 227px; height: 17px;">&nbsp;<span style="color: #3d85c6;">82%</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul style="list-style-type: circle; padding-left: 330px;">
+<li><span style="font-size: medium;"><strong>Results on test effectiveness</strong></span></li>
+</ul>
+<p style="padding-left: 330px; padding-right: 330px;">1. Results of the code coverage achieved by A3E (denoted by "A"), Monkey ("M"), Sapienz ("Sa"), and Stoat ("St") grouped by app size on the 93 open source app. Note each tool is allocated with three hours for each app and run on one emulator.</p>
+<p style="text-align: justify;"><span style="padding-right: 300px;">&nbsp;</span></p>
+<div style="display: block; text-align: left; margin-right: auto; padding-left: 300px; padding-right: 300px;"><a href="https://sites.google.com/site/stoat2017/evaluation/testing-effectiveness/testing_code_coverage_comparison.jpg?attredirects=0"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://sites.google.com/site/stoat2017/evaluation/testing-effectiveness/testing_code_coverage_comparison.jpg" border="0" /></a></div>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="padding-left: 330px; padding-right: 330px;">2. Testing statistics of A3E, Monkey, Sapienz, and Stoat in fault detection on the 93 open source app. The configuration is same as the above.</p>
+<table style="border-collapse: collapse; border-color: #888888; border-width: 1px; margin-left: auto; margin-right: auto;" border="1" cellspacing="0">
+<tbody>
+<tr>
+<td style="width: 78px; height: 31px;"><strong>Tool</strong></td>
+<td style="width: 113px; height: 31px;"><strong>&nbsp;#Buggy Apps</strong></td>
+<td style="width: 136px; height: 31px; text-align: center;"><strong>#Unique Crashes</strong></td>
+</tr>
+<tr>
+<td style="width: 78px; height: 17px;">A3E</td>
+<td style="text-align: center; width: 113px; height: 17px;">&nbsp;8</td>
+<td style="text-align: center; width: 136px; height: 17px;">&nbsp;8</td>
+</tr>
+<tr>
+<td style="width: 78px; height: 17px;">Monkey</td>
+<td style="text-align: center; width: 113px; height: 17px;">&nbsp;40</td>
+<td style="text-align: center; width: 136px; height: 17px;">&nbsp;76</td>
+</tr>
+<tr>
+<td style="width: 78px; height: 17px;">Sapienz</td>
+<td style="text-align: center; width: 113px; height: 17px;">&nbsp;43</td>
+<td style="text-align: center; width: 136px; height: 17px;">&nbsp;87</td>
+</tr>
+<tr>
+<td style="width: 78px; height: 17px;">Stoat</td>
+<td style="text-align: center; width: 113px; height: 17px;">&nbsp;68</td>
+<td style="text-align: center; width: 136px; height: 17px;">&nbsp;249</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="padding-right: 300px;">&nbsp;</span></p>
