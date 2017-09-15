@@ -11,6 +11,66 @@
 <p style="padding-left: 300px; padding-right: 300px; text-align: center;"><span style="font-size: medium; background-color: transparent;"><iframe src="https://www.youtube.com/embed/Xk7A7wczLj0" width="560" height="314" allowfullscreen="allowfullscreen"></iframe></span></p>
 <h3 style="padding-left: 300px;"><strong>Downloading Stoat</strong></h3>
 <p style="padding-left: 300px;">Download Stoat tool and user manual <a href="https://github.com/tingsu/Stoat">here</a>.</p>
+<h3 style="padding-left: 300px;"><strong>Evaluation</strong></h3>
+<p style="padding-left: 300px;"><span style="font-size: medium;">Stoat has been compared with the state-of-the-art.</span></p>
+<ul style="list-style-type: circle; padding-left: 330px; padding-right: 330px;">
+<li><span style="font-size: medium;"><strong>Study 1</strong>: To evaluation Stoat's ability in model construction, we compare it with MobiGUITAR and PUMA in terms of (1) model completeness: the code coverage achieved by the produced models; (2) model complexity: #model states/transitions</span></li>
+</ul>
+<div style="display: block; text-align: left; padding-left: 330px; padding-right: 330px;">
+<table style="border-collapse: collapse; border-color: #888888; border-width: 1px;" border="1" cellspacing="0">
+<tbody>
+<tr>
+<td style="text-align: center; width: 104px; height: 17px;"><span style="font-size: medium;"><strong>&nbsp;Tool Name</strong></span></td>
+<td style="text-align: center; width: 229px; height: 17px;"><span style="font-size: medium;"><strong>&nbsp;Approach</strong></span></td>
+<td style="text-align: center; width: 1261px; height: 17px;"><span style="font-size: medium;"><strong>Description</strong></span></td>
+</tr>
+<tr>
+<td style="text-align: left; width: 104px; height: 22px;"><span style="font-size: medium;">&nbsp;<a style="margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; line-height: inherit; font-family: Myriad Pro,Calibri,Helvetica,Arial,sans-serif; vertical-align: baseline; text-decoration: none; color: #007edf; background-color: #f2f2f2;" href="http://wpage.unina.it/ptramont/GUIRipperWiki.htm">MobiGUITAR</a></span></td>
+<td style="text-align: left; width: 229px; height: 22px;"><span style="font-size: medium;">&nbsp;model-based GUI exploration&nbsp;</span></td>
+<td style="text-align: left; width: 1261px; height: 22px;"><span style="font-size: medium;">MobiGUITAR is the extension of AndroidRipper, which implements a systematic exploration and a random exploration strategies when constructing models.</span></td>
+</tr>
+<tr>
+<td style="text-align: left; width: 104px; height: 22px;"><span style="font-size: medium;">&nbsp;<a style="margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; line-height: inherit; font-family: Myriad Pro,Calibri,Helvetica,Arial,sans-serif; vertical-align: baseline; text-decoration: none; color: #007edf; background-color: #f2f2f2;" href="https://github.com/USC-NSL/PUMA">PUMA</a></span></td>
+<td style="text-align: left; width: 229px; height: 22px;"><span style="font-size: medium;">&nbsp;model-based GUI exploration&nbsp;</span></td>
+<td style="text-align: left; width: 1261px; height: 22px;"><span style="font-size: medium;">PUMA uses a generic UI automator to sequentially explore GUIs, and stops exploring when all app states have been visited.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul style="list-style-type: circle; padding-left: 330px;">
+<li><span style="font-size: medium;"><strong>Study 2</strong>: To evaluate Stoat's ability in testing, we compare it with A3E, Monkey and Sapienz in terms of (1) code coverage; (2) #unique crashes</span></li>
+</ul>
+<div style="display: block; text-align: left; padding-left: 330px; padding-right: 330px;">&nbsp;</div>
+<div style="display: block; text-align: left; padding-left: 330px; padding-right: 330px;">
+<table style="border-collapse: collapse; border-color: #888888; border-width: 1px;" border="1" cellspacing="0">
+<tbody>
+<tr>
+<td style="text-align: center; width: 99px; height: 17px;">&nbsp;<strong>Tool Name</strong></td>
+<td style="text-align: center; width: 207px; height: 17px;"><strong>&nbsp;Approach</strong></td>
+<td style="text-align: center; width: 1204px; height: 17px;"><strong>&nbsp;&nbsp;Description</strong></td>
+</tr>
+<tr>
+<td style="width: 99px; height: 19px;">&nbsp;<a style="margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; line-height: inherit; font-family: Myriad Pro,Calibri,Helvetica,Arial,sans-serif; vertical-align: baseline; text-decoration: none; color: #007edf; background-color: #f2f2f2;" href="http://developer.android.com/tools/help/monkey.html">Monkey</a></td>
+<td style="width: 207px; height: 19px;">&nbsp;random fuzzing</td>
+<td style="width: 1204px; height: 19px;">Monkey emits a stream of random input events, including both UI and system events, to maximize code coverage.</td>
+</tr>
+<tr>
+<td style="width: 99px; height: 20px;">&nbsp;<a style="margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; line-height: inherit; font-family: Myriad Pro,Calibri,Helvetica,Arial,sans-serif; vertical-align: baseline; text-decoration: none; color: #007edf; background-color: #f2f2f2;" href="http://spruce.cs.ucr.edu/a3e/">A3E</a></td>
+<td style="width: 207px; height: 20px;">&nbsp;systematic UI exploration</td>
+<td style="width: 1204px; height: 20px;">A3E systematically explores app pages and emits UI events by following a depth-first strategy.</td>
+</tr>
+<tr>
+<td style="width: 99px; height: 34px;">&nbsp;<a style="margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; line-height: inherit; font-family: Myriad Pro,Calibri,Helvetica,Arial,sans-serif; vertical-align: baseline; text-decoration: none; color: #007edf; background-color: #f2f2f2;" href="https://github.com/Rhapsod/sapienz">Sapienz</a></td>
+<td style="width: 207px; height: 34px;">&nbsp;search-based testing</td>
+<td style="width: 1204px; height: 34px;">Sapienz uses Monkey to generate the initial test population, and exploits genetic algorithms to optimize the tests to maximize code coverage while minimizing test lengths.</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">In Study 1 and 2, Stoat is evaluated on 93 open-source Android apps from <a href="https://f-droid.org/">F-droid</a> (a popular open-source Android app repository): <a href="http://bear.cc.gatech.edu/~shauvik/androtest/">68 benchmark apps</a> (widely used in previous research work) and 25 randomly selected apps (to avoid potential evaluation bias).</p>
+</div>
+<ul style="list-style-type: circle; padding-left: 330px;">
+<li><span style="font-size: medium;"><strong>Study 3</strong>: To evaluate Stoat's usability and effectiveness, we apply Stoat to test 1661 most popular Android apps from Google Play.</span></li>
+</ul>
 <h3 style="padding-left: 300px;"><strong>Result</strong></h3>
 <ul style="list-style-type: circle; padding-left: 330px;">
 <li><span style="font-size: medium;"><strong>Results on model construction</strong></span></li>
@@ -127,6 +187,7 @@
 </tr>
 </tbody>
 </table>
+  <p>3. Example app models from Stoat</p>
 </div>
 <ul style="list-style-type: circle; padding-left: 330px;">
 <li><span style="font-size: medium;"><strong>Results on test effectiveness</strong></span></li>
@@ -136,33 +197,43 @@
 <div style="display: block; text-align: left; margin-right: auto; padding-left: 300px; padding-right: 300px;"><a href="https://sites.google.com/site/stoat2017/evaluation/testing-effectiveness/testing_code_coverage_comparison.jpg?attredirects=0"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://sites.google.com/site/stoat2017/evaluation/testing-effectiveness/testing_code_coverage_comparison.jpg" border="0" /></a></div>
 <p style="text-align: justify;">&nbsp;</p>
 <p style="padding-left: 330px; padding-right: 330px;">2. Testing statistics of A3E, Monkey, Sapienz, and Stoat in fault detection on the 93 open source app. The configuration is same as the above.</p>
-<table style="border-collapse: collapse; border-color: #888888; border-width: 1px; margin-left: auto; margin-right: auto;" border="1" cellspacing="0">
+<table style="border-collapse: collapse; border-color: #888888; border-width: 1px; margin-left: auto; margin-right: auto; width: 389.35px;" border="1" cellspacing="0">
 <tbody>
 <tr>
-<td style="width: 78px; height: 31px;"><strong>Tool</strong></td>
-<td style="width: 113px; height: 31px;"><strong>&nbsp;#Buggy Apps</strong></td>
-<td style="width: 136px; height: 31px; text-align: center;"><strong>#Unique Crashes</strong></td>
+<td style="width: 66px; height: 31px;"><strong>Tool</strong></td>
+<td style="width: 151px; height: 31px; text-align: center;"><strong>&nbsp;#Buggy Apps</strong></td>
+<td style="width: 159.35px; height: 31px; text-align: center;"><strong>#Unique Crashes</strong></td>
 </tr>
 <tr>
-<td style="width: 78px; height: 17px;">A3E</td>
-<td style="text-align: center; width: 113px; height: 17px;">&nbsp;8</td>
-<td style="text-align: center; width: 136px; height: 17px;">&nbsp;8</td>
+<td style="width: 66px; height: 17px;">A3E</td>
+<td style="text-align: center; width: 151px; height: 17px;">&nbsp;8</td>
+<td style="text-align: center; width: 159.35px; height: 17px;">&nbsp;8</td>
 </tr>
 <tr>
-<td style="width: 78px; height: 17px;">Monkey</td>
-<td style="text-align: center; width: 113px; height: 17px;">&nbsp;40</td>
-<td style="text-align: center; width: 136px; height: 17px;">&nbsp;76</td>
+<td style="width: 66px; height: 17px;">Monkey</td>
+<td style="text-align: center; width: 151px; height: 17px;">&nbsp;40</td>
+<td style="text-align: center; width: 159.35px; height: 17px;">&nbsp;76</td>
 </tr>
 <tr>
-<td style="width: 78px; height: 17px;">Sapienz</td>
-<td style="text-align: center; width: 113px; height: 17px;">&nbsp;43</td>
-<td style="text-align: center; width: 136px; height: 17px;">&nbsp;87</td>
+<td style="width: 66px; height: 17px;">Sapienz</td>
+<td style="text-align: center; width: 151px; height: 17px;">&nbsp;43</td>
+<td style="text-align: center; width: 159.35px; height: 17px;">&nbsp;87</td>
 </tr>
 <tr>
-<td style="width: 78px; height: 17px;">Stoat</td>
-<td style="text-align: center; width: 113px; height: 17px;">&nbsp;68</td>
-<td style="text-align: center; width: 136px; height: 17px;">&nbsp;249</td>
+<td style="width: 66px; height: 17px;">Stoat</td>
+<td style="text-align: center; width: 151px; height: 17px;">&nbsp;68</td>
+<td style="text-align: center; width: 159.35px; height: 17px;">&nbsp;249</td>
 </tr>
 </tbody>
 </table>
-<p style="text-align: justify;"><span style="padding-right: 300px;">&nbsp;</span></p>
+<h3 style="padding-left: 300px;"><strong>Publications</strong></h3>
+<p style="padding-left: 300px;">Find more detailed information in our publication</p>
+<ul style="padding-left: 330px;">
+<li><span style="font-size: medium;"><strong>Guided, Stochastic Model-Based GUI Testing of Android Apps </strong></span></li>
+</ul>
+<p style="padding-left: 330px; padding-right: 330px;">Ting Su, Guozhu Meng, Yuting Chen, Ke Wu, Weiming Yang, Yao Yao, Geguang Pu, Yang Liu, Zhendong Su</p>
+<p style="padding-left: 330px; padding-right: 330px;"><em>European Software Engineering Conference and ACM SIGSOFT Symposium on the Foundations of Software Engineering (ESEC/FSE), September 2017, Paderborn, Germany</em></p>
+<p style="padding-left: 330px; padding-right: 330px;">&nbsp;</p>
+<p style="padding-left: 330px; padding-right: 330px;">&nbsp;</p>
+<p style="padding-left: 330px; padding-right: 330px;">&nbsp;</p>
+<p style="padding-left: 330px; padding-right: 330px;">&nbsp;</p>
