@@ -31,11 +31,11 @@
 
         <hr>
         
-        <h1>A bibliography of Papers and Tools on Data Flow Testing</h1>
+        <h1>Towards Efficient Data-flow Test Generation</h1>
         
         <h2>Overview</h2>
         
-        <p>Data flow testing (DFT), introduced by Herman in 1976, is a family of testing strategies based on selecting paths from the program’s control flow in order to explore sequences of events related to the status of variables or data objects. It fills the gaps between all path testing and branch/statement testing with the aim to pinpoint the potential data-flow anomalies. The motivation behind is to verify the correctness of defined variable values by observing their corresponding uses can produce the desired results.</p>
+        <p>Data-flow testing (DFT) aims to check the correctness of variable definitions by observing their corresponding uses. In contrast to control-flow coverage criteria (e.g., statement, branch coverage), data-flow coverage criteria focus on the flow of data. Several empirical studies have demonstrated data-flow testing is more effective in fault detection than control-flow testing, however, the complexities of DFT still overwhelm the testers and prevent DFT from finding its adoption in practice. In this paper, we tackle this problem by introducing a hybrid testing framework, which synergistically combines two state-of-the-art techniques, i.e., symbolic execution (SE) and model checking. Symbolic execution is guided to efficiently search for program paths to cover data-flow test objectives, and then the problem of DFT is casted into reachability checking via software model checking to complement SE. This yields a practical DFT testing technique that combines the two approaches’ strengths. We implemented our technique on state-of-the-art symbolic execution tool KLEE and model checking tools BLAST, CPAchecker and CBMC, and extensively evaluate it on 30 real-world subjects with collectively 22,793 def-use pairs. Compared with state-of-the-arts, the enhanced symbolic execution approach can not only cover more pairs, but also reudce testing time by 10~43% and number of explored paths by 13~69%. The model checking approach can effectively weed out infeasible pairs that KLEE cannot tell by 70.1 ∼ 95.8%. As a result, the hybrid approach can improve data-flow coverage by 28.7~46.3%, and reduce testing time by up to 64.6% for all subjects than symbolic execution approach alone. This hybrid approach also enables cross-checking of each component for reliable and robust testing results.</p>
         
         <p>See this <a href="http://tingsu.github.io/files/data-flow-testing-survey.pdf">survey</a> for details about data flow testing techniques.</p>
         
