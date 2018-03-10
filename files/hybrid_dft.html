@@ -35,37 +35,269 @@
         
         <h2>Overview</h2>
         
-        <p>Data-flow testing (DFT) aims to check the correctness of variable definitions by observing their corresponding uses. In contrast to control-flow coverage criteria (e.g., statement, branch coverage), data-flow coverage criteria focus on the flow of data. Several empirical studies have demonstrated data-flow testing is more effective in fault detection than control-flow testing, however, the complexities of DFT still overwhelm the testers and prevent DFT from finding its adoption in practice. In this paper, we tackle this problem by introducing a hybrid testing framework, which synergistically combines two state-of-the-art techniques, i.e., symbolic execution (SE) and model checking. Symbolic execution is guided to efficiently search for program paths to cover data-flow test objectives, and then the problem of DFT is casted into reachability checking via software model checking to complement SE. This yields a practical DFT testing technique that combines the two approaches’ strengths. We implemented our technique on state-of-the-art symbolic execution tool KLEE and model checking tools BLAST, CPAchecker and CBMC, and extensively evaluate it on 30 real-world subjects with collectively 22,793 def-use pairs. Compared with state-of-the-arts, the enhanced symbolic execution approach can not only cover more pairs, but also reudce testing time by 10~43% and number of explored paths by 13~69%. The model checking approach can effectively weed out infeasible pairs that KLEE cannot tell by 70.1 ∼ 95.8%. As a result, the hybrid approach can improve data-flow coverage by 28.7~46.3%, and reduce testing time by up to 64.6% for all subjects than symbolic execution approach alone. This hybrid approach also enables cross-checking of each component for reliable and robust testing results.</p>
+        <p><a href="http://tingsu.github.io/files/data-flow-testing-survey.pdf">Data-flow testing (DFT)</a> aims to check the correctness of variable definitions by observing their corresponding uses. In contrast to control-flow coverage criteria (e.g., statement, branch coverage), data-flow coverage criteria focus on the flow of data. Several empirical studies have demonstrated data-flow testing is more effective in fault detection than control-flow testing, however, the complexities of DFT still overwhelm the testers and prevent DFT from finding its adoption in practice. In this paper, we tackle this problem by introducing a hybrid testing framework, which synergistically combines two state-of-the-art techniques, i.e., symbolic execution (SE) and model checking. Symbolic execution is guided to efficiently search for program paths to cover data-flow test objectives, and then the problem of DFT is casted into reachability checking via software model checking to complement SE. This yields a practical DFT testing technique that combines the two approaches’ strengths. We implemented our technique on state-of-the-art symbolic execution tool KLEE and model checking tools BLAST, CPAchecker and CBMC, and extensively evaluate it on 30 real-world subjects with collectively 22,793 def-use pairs. Compared with state-of-the-arts, the enhanced symbolic execution approach can not only cover more pairs, but also reudce testing time by 10~43% and number of explored paths by 13~69%. The model checking approach can effectively weed out infeasible pairs that KLEE cannot tell by 70.1 ∼ 95.8%. As a result, the hybrid approach can improve data-flow coverage by 28.7~46.3%, and reduce testing time by up to 64.6% for all subjects than symbolic execution approach alone. This hybrid approach also enables cross-checking of each component for reliable and robust testing results.</p>
         
-        <p>See this <a href="http://tingsu.github.io/files/data-flow-testing-survey.pdf">survey</a> for details about data flow testing techniques.</p>
-        
-        <p>Various approaches have been used to automate data flow testing, for example the following approaches have been used in data flow-based test generation:</p>
-        
-        <ul>
-            <li><i>Random Testing</i>: random or adaptive random test generation.</li>
-            <li><i>Collateral Coverage-based Testing</i>: exploit the subsumption relation between test objectives to reduce testing cost and infer coverage.</li>
-            <li><i>Search-based Testing</i>: search algorithms (e.g. genetic algorithms, optimization algorithms) are used guided by a fitness function to sastify test objectives.</li>
-            <li><i>Symbolic Execution-based Testing</i>: it includes traditional (i.e. static) symbolic execution and dynamic symbolic execution.</li>
-            <li><i>Model Checking-based Testing</i>: a verfication-based testing method used to generate conterexamples as tests.</li>
+	        
+        <h2>Approach Workflow</h2>
+
+		<h2>Tools (<a href="https://github.com/tingsu/hybrid_dft">Download</a>)</h2>
+		
+			
+			<p>Our approach was built on four different tools, which are summarized as follows.</p>
+			<table border="1">
+				<tr>
+					<th>Name</th>
+					<th>Approach</th>
+					<th>Technique</th>
+					<th>Version</th>
+				</tr>
+
+				<tr>
+				    <td><a href="">KLEE</a></td>
+				    <td>Symbolic Execution</td>
+				    <td>SE</td>
+				    <td>v1.1.0</td>
+				</tr>
+
+				<tr>
+				    <td><a href="">BLAST</a></td>
+				    <td>Model Checking</td>
+				    <td>CEGAR</td>
+				    <td>v2.7.3</td>
+				</tr>
+
+				<tr>
+				    <td><a href="">CPAchecker</a></td>
+				    <td>Model Checking</td>
+				    <td>CEGAR</td>
+				    <td>v1.6.1</td>
+				</tr>
+
+				<tr>
+				    <td><a href="">CBMC</a></td>
+				    <td>Model Checking</td>
+				    <td>BMC</td>
+				    <td>v5.6</td>
+				</tr>
+			</table>
+
+		<h2>Benchmark (<a href="https://github.com/tingsu/hybrid_dft">Download</a>)</h2>
+
+		<p>We carefully constructed a repository of benchmark subjects for evaluating data-flow testing techniques. It includes subjects from three sources:</p>
+
+		<ul>
+            <li>Existing literature on data-flow testing</li>
+            <li>Siemens artifacts from SIR</li>
+            <li>Subjects from SV-COMP</li>
         </ul>
-        
-        
-        <h2>Publications</h2>
-        
-        <p>A list of publications related to data flow testing (download, <a href="http://tingsu.github.io/files/publication_repo.zip">zip</a>). (If you know about a paper that is not in the list, feel free to send me an <a href="mailto:tsuletgo@gmail.com">email</a>).</p>
-        
-        <ul>
-            <li>Methods: RT - random testing, GA - genetic algorithm</li>
+
+		<p>CBMC uses --unwind and --depth, respectively, to limit the number of times loops to be unwound and the number of program steps to be processed. The parameters used in our evaluation are listed below.</p>
+
+		<table border="1">
+				<tr>
+					<th>Name</th>
+					<th>CBMC's --unwind</th>
+					<th>CBMC's --depth</th>
+				</tr>
+
+				<tr>
+				    <td>factorization</td>
+				    <td>4</td>
+				    <td>90</td>
+				</tr>
+
+				<tr>
+				    <td>power</td>
+				    <td>2</td>
+				    <td>40</td>
+				</tr>
+
+				<tr>
+				    <td>find</td>
+				    <td>4</td>
+				    <td>90</td>
+				</tr>
+
+				<tr>
+				    <td>triangle</td>
+				    <td>2</td>
+				    <td>40</td>
+				</tr>
+
+				<tr>
+				    <td>strmat</td>
+				    <td>3</td>
+				    <td>60</td>
+				</tr>
+
+				<tr>
+				    <td>strmat2</td>
+				    <td>3</td>
+				    <td>70</td>
+				</tr>
+
+				<tr>
+				    <td>textfmt</td>
+				    <td>25</td>
+				    <td>700</td>
+				</tr>
+
+				<tr>
+				    <td>tcas</td>
+				    <td>2</td>
+				    <td>200</td>
+				</tr>
+
+				<tr>
+				    <td>replace</td>
+				    <td>6</td>
+				    <td>350</td>
+				</tr>
+
+				<tr>
+				    <td>totinfo</td>
+				    <td>15</td>
+				    <td>250</td>
+				</tr>
+
+				<tr>
+				    <td>printtokens</td>
+				    <td>30</td>
+				    <td>300</td>
+				</tr>
+
+				<tr>
+				    <td>printtokens2</td>
+				    <td>12</td>
+				    <td>450</td>
+				</tr>
+
+				<tr>
+				    <td>schedule</td>
+				    <td>5</td>
+				    <td>350</td>
+				</tr>
+
+				<tr>
+				    <td>schedule2</td>
+				    <td>5</td>
+				    <td>250</td>
+				</tr>
+
+				<tr>
+				    <td>kbfiltr</td>
+				    <td>2</td>
+				    <td>250</td>
+				</tr>
+
+				<tr>
+				    <td>kbfiltr2</td>
+				    <td>2</td>
+				    <td>300</td>
+				</tr>
+
+				<tr>
+				    <td>diskperf</td>
+				    <td>2</td>
+				    <td>650</td>
+				</tr>
+
+				<tr>
+				    <td>floppy</td>
+				    <td>2</td>
+				    <td>500</td>
+				</tr>
+
+				<tr>
+				    <td>floppy2</td>
+				    <td>2</td>
+				    <td>500</td>
+				</tr>
+
+				<tr>
+				    <td>cdaudio</td>
+				    <td>2</td>
+				    <td>500</td>
+				</tr>
+
+				<tr>
+				    <td>s3_clnt</td>
+				    <td>13</td>
+				    <td>500</td>
+				</tr>
+
+				<tr>
+				    <td>s3_clnt_termination</td>
+				    <td>13</td>
+				    <td>400</td>
+				</tr>
+		
+				<tr>
+				    <td>s3_srvr_1a</td>
+				    <td>10</td>
+				    <td>200</td>
+				</tr>
+
+				<tr>
+				    <td>s3_srvr_1b</td>
+				    <td>4</td>
+				    <td>100</td>
+				</tr>
+
+				<tr>
+				    <td>s3_srvr_2</td>
+				    <td>15</td>
+				    <td>1450</td>
+				</tr>
+
+				<tr>
+				    <td>s3_srvr_7</td>
+				    <td>15</td>
+				    <td>1450</td>
+				</tr>
+
+				<tr>
+				    <td>s3_srvr_8</td>
+				    <td>15</td>
+				    <td>1450</td>
+				</tr>
+
+				<tr>
+				    <td>s3_srvr_10</td>
+				    <td>15</td>
+				    <td>600</td>
+				</tr>
+
+				<tr>
+				    <td>s3_srvr_12</td>
+				    <td>15</td>
+				    <td>1500</td>
+				</tr>
+
+				<tr>
+				    <td>s3_srvr_13</td>
+				    <td>15</td>
+				    <td>1500</td>
+				</tr>
+				
+			</table>
+
+		<h2>Summary of Results</h2>
+		        
+		<ul>
+            <li><b>RQ1:</b> Is the symbolic execution-based approach, enhanced with the cut point guided path exploration strategy, effective for data-flow testing?</li>
+			<p>In summary, the cut point guided search strategy outperforms the existing state-of-the-arts. It covers more def-use pairs, and at the same time reduces the testing time by 10~43% and the number of explored paths by 13~69%. Therefore, the symbolic execution-based approach, enhanced with the cut point guided search strategy, is effective for data-flow testing.</p>
+
+            <li><b>RQ2:</b> How is the performance of the model checking-based approach for data-flow testing?</li>
+			<p>In summary, model checking based approach is effective for data-flow testing. BLAST, CPAchecker and CBMC can give consistent conclusions on the majority of def-use pairs. CPAchecker and CBMC have the best performance in number of detected feasible and infeasible pairs, and in general CPAchecker is much faster than CBMC. Due to the algorithm differences, the BMC-based approach, i.e., CBMC, is more effective on small-scale subjects, while the CEGAR-based approach, i.e., BLAST and CPAchecker, is more effective on large and complex subjects.</p>
+
+			<li><b>RQ3:</b> Is the hybrid approach, which combines the symbolic execution and model checking techniques, more effective for data-flow testing?</li>
+			<p>In summary, the hybrid approach, which combines symbolic execution and model checking, is more effective than individual approach alone. The model checking approach can weed out infeasible pairs that the symbolic execution approach cannot tell by 70.1%~95.8%. Compared with KLEE, the hybrid approach can improve data-flow coverage by 28.7~46.3%. In particular, KLEE+CPAchecker achieves the best performance, which reduces testing time by 64.6% for all 30 subjects, and at the same time improves data-flow coverage by 37.1%.</p>
         </ul>
-
-	
-
-
-	<h2><a name="references"></a>Tools</h2>
-    <p>A list of tools related to data flow testing: </p>
    
+	<p>For more information, please feel free to contact us: <a href="http://tingsu.github.io/">Ting Su</a>, <a href="http://www.chengyuzhang.com/">Chengyu Zhang</a>, Yichen Yan.</p>
     
-    <p>Last modified: 2017.1.</p>
+    <p>Last modified: 2017.3</p>
 
     </body>
 </html>
