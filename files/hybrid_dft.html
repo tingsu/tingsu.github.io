@@ -35,7 +35,8 @@
         
         <h2>Overview</h2>
         
-        <p><a href="http://tingsu.github.io/files/data-flow-testing-survey.pdf">Data-flow testing (DFT)</a> checks the correctness of variable definitions by observing their corresponding uses. It has been empirically proved to be more effective than control-flow testing in fault detection, however, its complexities still overwhelm the testers in practice. To tackle this problem, we introduce a hybrid testing framework: (1) The core of our framework is symbolic execution, enhanced by a novel guided path search to improve testing performance; and (2) we systematically cast DFT as reachability checking in software model checking to complement SE, yielding practical DFT that combines the two techniques’ strengths. We implemented our framework on the state-of-the-art symbolic execution tool KLEE and model checking tools BLAST, CPAchecker and CBMC, and extensively evaluate it on 30 real-world subjects with collectively 22,793 def-use pairs. The enhanced SE approach not only covers more pairs, but also reduces testing time by 10∼43%. The model checking approach can effectively weed out infeasible pairs that KLEE cannot infer by 70.1∼95.8%. Finally, for all subjects, our hybrid approach can improve data-flow coverage by 28.7∼46.3%, and reduce testing time by up to 64.6% than the symbolic execution approach alone. This hybrid approach also enables the cross-checking of each component for reliable and robust testing results.</p>
+        <p><a href="http://tingsu.github.io/files/data-flow-testing-survey.pdf">Data-flow testing (DFT)</a> aims to detect potential data interaction anomalies by focusing on the points at which variables receive values and the points at which these values are used. Such test objectives are referred as def-use pairs. However, the complexity of DFT still overwhelms the testers in practice. To tackle this problem, we introduce a hybrid testing framework for data-flow based test generation: (1) The core of our framework is symbolic execution (SE), enhanced by a novel guided path exploration strategy to improve testing performance; and (2) we systematically cast DFT as reachability checking in software model checking (SMC) to complement SE, yielding practical DFT that combines the two techniques’ strengths. We implemented our framework for C programs on top of the state-of-the-art symbolic execution engine KLEE and instantiated with three different software model checkers. Our evaluation on the 28,354 def-use pairs collected from 33 open-source and industrial program subjects shows (1) our SE-based approach can improve DFT performance by 15∼48%
+in terms of testing time, compared with state-of-the-art search strategies; and (2) our combined approach can further reduce testing time by 20.1∼93.6%, and improve data-flow coverage by 27.8∼45.2% by eliminating infeasible test objectives. This hybrid approach also enables the cross-checking of each component for reliable and robust testing results. We have made our testing framework and benchmarks publicly available to facilitate future research.</p>
         
 	        
         <h2>Approach Workflow</h2>
@@ -76,14 +77,14 @@
 				    <td><a href="https://cpachecker.sosy-lab.org/">CPAchecker</a></td>
 				    <td>Model Checking</td>
 				    <td>CEGAR</td>
-				    <td>v1.6.1</td>
+				    <td>v1.7</td>
 				</tr>
 
 				<tr>
 				    <td><a href="http://www.cprover.org/cbmc/">CBMC</a></td>
 				    <td>Model Checking</td>
 				    <td>BMC</td>
-				    <td>v5.6</td>
+				    <td>v5.7</td>
 				</tr>
 			</table>
 
@@ -91,12 +92,13 @@
 
 		<h2>Benchmark (<a href="https://github.com/tingsu/hybrid_dft">Download</a>)</h2>
 
-		<p>We carefully constructed a repository of benchmark subjects for evaluating data-flow testing techniques. It includes subjects from three sources:</p>
+		<p>We carefully constructed a repository of benchmark subjects for evaluating data-flow testing techniques. It includes subjects from four sources:</p>
 
 		<ul>
             <li><a href="https://tingsu.github.io/files/dftbib.html">Existing literature</a> on data-flow testing</li>
             <li>Siemens artifacts from <a href="http://sir.unl.edu/php/previewfiles.php">SIR</a></li>
             <li>Subjects from <a href="https://sv-comp.sosy-lab.org/2017/">SV-COMP</a></li>
+			<li>Subjects from our industrial research partners (automobile, space, subway companies)</li>
         </ul>
 
 		<p>CBMC uses --unwind and --depth, respectively, to limit the number of times loops to be unwound and the number of program steps to be processed. The parameters used in our evaluation are listed below.</p>
@@ -287,30 +289,55 @@
 				    <td>15</td>
 				    <td>1500</td>
 				</tr>
+
+				<tr>
+				    <td>osek_control</td>
+				    <td>15</td>
+				    <td>1500</td>
+				</tr>
+	
+				<tr>
+				    <td>space_control</td>
+				    <td>15</td>
+				    <td>1500</td>
+				</tr>
+
+				<tr>
+				    <td>subway_control</td>
+				    <td>15</td>
+				    <td>1500</td>
+				</tr>
 				
 			</table>
 
 		<h2>Summary of Results</h2>
 		        
 		<ul>
-            <li><b>RQ1:</b> Is the symbolic execution-based approach, enhanced with the cut point guided path exploration strategy, effective for data-flow testing?</li>
-			<p>In summary, the cut point guided search strategy outperforms the existing state-of-the-arts. It covers more def-use pairs, and at the same time reduces the testing time by 10~43% and the number of explored paths by 13~69%. Therefore, the symbolic execution-based approach, enhanced with the cut point guided search strategy, is effective for data-flow testing.</p>
+            <li><b>RQ1:</b> In the data-flow testing w.r.t. all def-use coverage, what is the performance difference
+between different search strategies, i.e., DFS, RSS, RSS-COS:md2u, SDGS and CPGS (our cut point guided path search strategy) in terms of testing time and number of covered pairs for the SE-based approach?</li>
 
-            <li><b>RQ2:</b> How is the performance of the model checking-based approach for data-flow testing?</li>
-			<p>In summary, model checking based approach is effective for data-flow testing. BLAST, CPAchecker and CBMC can give consistent conclusions on the majority of def-use pairs. CPAchecker and CBMC have the best performance in number of detected feasible and infeasible pairs, and in general CPAchecker is much faster than CBMC. Due to the algorithm differences, the BMC-based approach, i.e., CBMC, is more effective on small-scale subjects, while the CEGAR-based approach, i.e., BLAST and CPAchecker, is more effective on large and complex subjects.</p>
+			<p>In summary, our cut-point guided search (CPGS) strategy performs the best for data-flow testing. It improves 12∼40% data-flow coverage, and at the same time reduces the total testing time by 15∼48% and the number of explored paths by 28∼74%. Therefore, the SE-based approach, enhanced with the cut point guided search strategy, is effective for data-flow testing.</p>
 
-			<li><b>RQ3:</b> Is the hybrid approach, which combines the symbolic execution and model checking techniques, more effective for data-flow testing?</li>
-			<p>In summary, the hybrid approach, which combines symbolic execution and model checking, is more effective than individual approach alone. The model checking approach can weed out infeasible pairs that the symbolic execution approach cannot tell by 70.1%~95.8%. Compared with KLEE, the hybrid approach can improve data-flow coverage by 28.7~46.3%. In particular, KLEE+CPAchecker achieves the best performance, which reduces testing time by 64.6% for all 30 subjects, and at the same time improves data-flow coverage by 37.1%.</p>
+            <li><b>RQ2:</b> How is the practicability of the SMC-based reduction approach (with the CEGAR-based and
+BMC-based techniques) in terms of testing time and number of identified feasible and infeasible pairs?</li>
+
+			<p>In summary, the SMC-based reduction approach in general is practical for data-flow testing. Both the CEGAR-based and BMC-based approaches can give consistent conclusions on the majority of def-use pairs. Specifically, the CEGAR-based approach can give answers for feasibility as certain, while the BMC-based approach can serve as a heuristic-criterion to identify hard-to-cover (probably infeasible) pairs if given appropriate checking bounds. In general, the CEGAR-based approach is more efficient on large and complicated subjects than the BMC-based approach in the context of data-flow testing.</p>
+
+			<li><b>RQ3:</b> How efficient is the hybrid approach, which complements the SE-based approach with the
+SMC-based approach, in terms of testing time and coverage level, compared with the SE-based approach or the SMC-based approach alone?</li>
+
+			<p>In summary, the hybrid approach, which combines symbolic execution and software model checking, achieves more efficient data-flow testing. The model checking approach can weed out infeasible pairs that the symbolic execution approach cannot infer by 71.9%∼97.2%. Compared with KLEE alone, the hybrid approach can improve data-flow coverage by 27.8∼45.2%. In particular, KLEE+CPAchecker performs best, which reduces total testing time by 93.6% for
+all 33 subjects, and at the same time improves data-flow coverage by 36.5%. Compared with the SMC-based approach alone, the hybrid approach can also reduce testing time by 19.9∼23.8%.</p>
         </ul>
    
-	<p>For more information, please feel free to contact us: <a href="http://tingsu.github.io/">Ting Su</a>, <a href="http://www.chengyuzhang.com/">Chengyu Zhang</a>, Yichen Yan.</p>
+	<p>For more information, please feel free to contact us: <a href="http://tingsu.github.io/">Ting Su</a>, Chengyu Zhang, Yichen Yan.</p>
 
 	<h2>Reference</h2>
 
 	<ul>
-			<li>Towards Efficient Data-flow Test Data Generation (under the review of a software engineering journal)</li>
+			<!--<li>Towards Efficient Data-flow Test Data Generation (under the review of a software engineering journal)</li>
 	
-            <li>Towards Efficient Data Flow Test Input Generation Using KLEE (KLEE Workshop, 2018)</li>
+            <li>Towards Efficient Data Flow Test Input Generation Using KLEE (KLEE Workshop, 2018)</li> -->
 
             <li>SmartUnit: Empirical Evaluations for Automated Unit Testing of Embedded Software in Industry (ICSE 2018 SEIP)</li>
 
@@ -324,7 +351,7 @@
 
     </ul>
     
-    <p>Last modified: 2018.3</p>
+    <p>Last modified: 2019.3</p>
 
     </body>
 </html>
