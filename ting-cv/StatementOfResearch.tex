@@ -1,0 +1,207 @@
+\documentclass[a4paper]{article}
+
+\usepackage{hyperref}
+
+\title{RESEARCH STATEMENT}
+\author{Ting Su}
+\date{\today}
+
+\setlength{\topmargin}{-10mm}
+\setlength{\textwidth}{7in}
+\setlength{\oddsidemargin}{-8mm}
+\setlength{\textheight}{9in}
+\setlength{\footskip}{1in}
+
+\begin{document}
+\fontsize{12}{15}
+\selectfont
+\maketitle
+
+\section{Research Overview}
+
+My research interests mainly involve software engineering, programming language, and security. I am particularly interested in developing novel program analysis, testing and verification techniques to improve software quality, reliability, security, and developer productivity. In my research, I devote myself to convert these techniques into practical tools (not just prototypes), and benefit both academic researchers and industrial practitioners. This document gives a summary of my accomplished
+research, achievements and their impacts, as well as future research agenda.
+
+During my Ph.D study (2011-2016), I focus on the problem of how to automatically and efficiently generate test data (inputs) to improve software testing (especially for embedded software). \emph{Generating valid and effective test data is one of the most crucial steps towards finding software bugs, and usually demands painstaking human efforts.}
+To this end, my research goal is to reduce human efforts and reveal software bugs as early as possible (especially at the unit testing stage). 
+To fit into the real-world context, I elaborately investigated the real unit testing requirements from ten selected research partner companies in China Mainland, covering many safety-critical fields like railway, aerospace, nuclear plant, and automobile.
+We find unit testing is a mandatory task required in various international standards, e.g., IEC 61508, ISO26262, RTCA DO-178B/C, etc for testing industrial systems. Moreover, different test adequacy criteria are demanded according to the required safety integrity levels.
+
+To achieve this goal, I adapted \emph{dynamic symbolic execution} technique and proposed several efficient test data generation algorithms and strategies~\cite{sere14,icse15,csur17,scis16,smartunit}.
+I spent three years in developing and maintaining a tool named CAUT, a symbolic execution based automatic testing tool for \texttt{C} program. CAUT can automatically generate test data for both control-flow criteria (e.g., statement, branch and MC/DC coverage)~\cite{sere14} and data-flow criteria (e.g., all def-use coverage)~\cite{icse15,csur17}.
+Further, I systematically adapt software model checking technique to complement symbolic execution. This combined approach can effectively eliminate infeasible test objectives (i.e., no test data exists for covering such test objectives), and thus further reduce human inspection efforts. Recently, CAUT has been commercialized into an industry unit testing tool SmartUnit~\cite{smartunit}, and now is serving more than ten Chinese domestic companies.
+
+Since 2015, I start to looking into the problem of how to effectively test GUI software (especially for mobile GUI applications). This line of work also lasts during my whole postdoctoral research (2016-now).
+Unlike traditional embedded software, GUI software heavily interacts with complex environments (e.g., humans, device sensors and other apps), which poses several unique challenges for quality assurance.
+For example, mobile applications (e.g., Android, iOS) contains diverse GUI widgets, runs on fast-evolving mobile platforms (which are notoriously fragmented), and requires very short delivery cycle. To this end, my research goal is to develop effective analysis, testing, debugging techniques to ensure their reliability and security.
+
+To put this goal into practice, I spent two years and developed a state-of-the-art GUI testing tool \emph{\textbf{Stoat}} (\url{https://tingsu.github.io/files/stoat.html}) for Android apps~\cite{stoat}. Stoat has extensively tested 9,000+ open-source and commercial apps and found 8,000+ fatal crashes in one year. 
+Based on these crash bugs and online data from open-source hosting platforms (e.g., \texttt{Github}, \texttt{Google Code}), I lead the work of conducting the first large-scale and most comprehensive fault study of Android apps~\cite{study,study2}. We investigate these bugs from several perspectives: (1)
+their characteristics (e.g., manifestation locations, fault taxonomies), (2) the developers’ testing practice, (3) the abilities of existing bug
+detection techniques, (4) their reproducibility and (5) bug fixes. This study motivates several follow-up research directions.
+Inspired by this study, I further lead the work of detecting asynchronous programming errors in Android apps~\cite{apechecker}. The key idea is to characterize APEs as specific fault patterns, and synergistically combine static analysis and dynamic UI exploration to detect and verify such errors.
+We developed a tool APEChecker to enforce this idea, which greatly improves the-state-of-art and reduces testing time from half an hour to a few minutes for each app. 
+To improve the security of Android apps, I also work on leveraging static taint analysis technique to identify potential security weaknesses in banking apps~\cite{ausera}, which may leak sensitive user information (e.g., identities, passwords)
+
+To further improve developer productivity, I also work on automated debugging, GUI code generation and comprehension for Android apps~\cite{recdroid,ui2code,storydroid}.
+We leverage natural language processing (NLP) techniques to automatically reproduce app crashes from human-written bug reports~\cite{recdroid}.
+We also leverage deep learning techniques to automatically generate GUI skeleton code to boost mobile GUI implementation~\cite{ui2code}.
+These proposed solutions significantly save development efforts.
+
+During my postdoctoral research (2016-now), I am also particularly interested in validating the correctness of fundamental software that we very depend on. These fundamental software includes compilers and program analyzers. For example, compiler bugs can lead to bugs in other programs, weaken source-code level analysis and hard to notice. Program analyzer bugs may lead to incorrect analysis or verification results of the programs under checking, which could mislead programmers. In this direction, I work on using differential testing to stress-test Java Virtual Machines (JVMs)~\cite{classfuzz,classming} and reachability fuzzing to validate software model checkers~\cite{mcfuzz} (the implementations of a well-known automatic program verification technique). 
+
+
+\section{Research Achievements and Impacts}
+
+Section~\ref{highlight} my research achievements and impacts, and Section~\ref{mobile},~\ref{unit_testing},~\ref{testing_analyzers} give more details.
+
+\subsection{Highlight}
+\label{highlight}
+
+My research work is mainly published on top-tier conferences and journals in the fields of software engineering and programming languages. In the recent five years, I have published \underline{26} papers. Among them, \underline{15} papers are top-tier papers (\underline{11} are published as the first author or corresponding author), and ICSE (7 full papers), FSE (3 full papers), ASE (2 full papers), PLDI (1 full paper) and CSUR (1 full paper). To date, my Google Scholar citation is \underline{294}, and H-index is \underline{9}.
+
+In the field of software testing and analysis, I, as the first author, won \emph{First Place of ACM Student Research Competition} in ICSE 2016 and \emph{First Place of Research Tool Competition} in NASAC 2017 (the flagship software engineering and system conference in China); as the co-first author and corresponding author (the first author is a Ph.D. student I directly surprised), I won an \emph{ACM SIGSOFT Distinguished Paper Award} in ICSE 2018. I also won another \emph{ACM SIGSOFT Distinguished Paper Award} in ASE 2018 for testing deep learning system. As the first author, I proposed and developed \emph{Stoat}, a stochastic, model-based GUI testing technique, which is now one of state-of-art GUI testing tool, and widely used by many researchers and industrial practitioners.
+As the main author, I also proposed and developed \emph{SmartUnit}, which is already converted into a commercial unit testing tool for industrial embedded software. It is now severing more than 10 Chinese domestic leading companies and has accumulatively tested millions lines of code.
+
+
+\subsection{Mobile App Analysis, Testing and Security}
+\label{mobile}
+
+I lead several research work on analyzing, testing, debugging, and securing mobile applications. The \emph{key goal} is to sharpen the competitive edge of mobile apps, and ensure their reliability and security.
+All these work has been published in top-tier software engineering conferences, including ICSE (5 papers), FSE (2 papers), ASE (1 paper).
+
+As the first author, I spent two years and developed a state-of-the-art GUI testing tool \emph{\textbf{Stoat}} (\url{https://tingsu.github.io/files/stoat.html}) for Android apps.
+Stoat enforces a guided, stochastic model-based GUI testing technique.
+To date, Stoat has been deployed to extensively test \underline{9,000+} open-source and commercial apps and found \underline{8,000+} fatal crashes. Stoat has helped find several bugs in such popular apps as \texttt{WeChat}, \texttt{Google+}, \texttt{Gmail} that have billions of users. All these bugs have been confirmed and fixed. 
+
+Stoat won several awards: the \emph{First Place of ACM Student Research Competition} in ICSE 2016, \emph{First Place of Research Tool Competition} in NASAC 2017 (the flagship software engineering and system conference in China), and received \emph{NTUitive Gap Fund Grant} S\$240,250 in 2018 for commercialization potential. Stoat was recognized as ``\emph{a state-of-the-art tool, (which) is able to trigger the highest number of unique crashes (in Android apps)}'' by a recent ASE 2018 paper from the research group of IEEE Fellow Prof. Tao Xie; ``\emph{Stoat is effective for discovering unique crashes}'' by a recent ISSTA 2019 paper from the research group of ACM Fellow Prof. Andreas Zeller; ``\emph{We compare our tool with three state-of-art testing tools, i.e., Monkey, Sapienz and Stoat}'' mentioned by a recent ICSE 2019 paper from the research group of ETH Zurich.
+Stoat has also been widely used by the researchers from many renowned institutes worldwide, e.g., UIUC, UC Irvine, ETH Zurich, Singapore National University, Peking University, Nanjing University. See the demo of Stoat testing platform: \url{https://youtu.be/41jzFM7WhP4}
+
+On the basis of Stoat, as the co-first author (also a corresponding author), I lead the largest and most comprehensive fault study for Android apps (\url{https://crashanalysis.github.io/}), based on the bugs detected by Stoat and the data from open-source hosting platforms (e.g., \texttt{Github}, \texttt{Google Code}). This study involves \underline{250,000} crash bugs from \underline{2,486} open-source apps and \underline{3,230} commercial apps, and insightful feedback from \underline{135} professional app developers worldwide. We investigate the key question ``\emph{why an Android app may crash?}'', understand how app developers analyze, test, reproduce and fix app crashes, and motivate several follow-up research directions. This work won an \emph{ACM SIGSOFT Distinguished Paper Award} in ICSE 2018. Our dataset and benchmark have been requested by more than 13 institutes worldwide (e.g., CMU, KAIST, UNSW, onash, HKUST). Due to this work, I was invited to give talks in A-Mobile 2018 (a ASE 2018 workshop) and ISEC 2019 (the flagship software engineering conference in India)
+Following this study, we designed more effective testing techniques (Stoat+ and APEChecker) for detecting intricate bug types (e.g., asynchronous programming errors). 
+
+We also conducted a large-scale automated security risk assessment for mobile banking apps. This study revealed \underline{2,157} security weaknesses in \underline{693} banking apps worldwide. To date, \underline{21} banking entities have confirmed \underline{126} weaknesses, and \underline{52} weaknesses have been patched. This work has been well-acknowledged by some bank entities from HonKong, Singapore and India, e.g., \texttt{HSBC}, \texttt{OCBC}, \texttt{DBS} and \texttt{BHIM}. The tool \textbf{Ausera} won \emph{Third Place of Research Tool Competition} in NASAC 2018, and now has been integrated into one security scanning product of \href{https://scantist.com/}{\texttt{Scantist}}. 
+
+
+\subsection{Automatic Test Data Generation for Embedded Software}
+\label{unit_testing}
+
+During the first three years of my Ph.D, I invested tremendous efforts in the development and maintenance of CAUT (\url{https://github.com/tingsu/caut-lib}), a symbolic execution based automatic testing tool for \texttt{C} program. CAUT's main novelty is to automatically, efficiently generate test data to satisfy different types of code adequacy criteria, including both control-flow and data-flow. The related papers were published in ICSE 2015, CSUR 2017, and ICSE 2018.
+
+CAUT has been successfully applied to test several industrial embedded software, including an automobile engine management system, a satellite gesture control system, and a subway signal control system.  According to the feedback from our partner companies, on average, CAUT reduced 60\% human efforts, improved 20\% code coverage, and revealed several critical bugs in these products. 
+
+Later, as a co-founder, I significantly contributed to \textbf{\emph{\href{http://180.167.177.62:1111}{SmartUnit}}}, a commercial automated unit testing tool inherited from CAUT. SmartUnit fully supports unit testing for statement, branch, boundary value and MC/DC coverage, and has been applied in several \underline{industry-scale} embedded control systems, and accumulatively tested \underline{millions lines} of C code.  
+To date, it is serving more than ten Chinese domestic companies, including \texttt{CASCO} (the best railway signal
+corporation in China), \texttt{GAC MOTOR} (one of biggest car manufacturers in China), \texttt{CAST} (the main spacecraft production agency in China). 
+
+\subsection{Testing Compilers and Program Analyzers}
+\label{testing_analyzers}
+
+I also worked on testing compilers (e.g., Java Virtual Machines) and program analyzers (e.g., software model checkers, SAT/SMT solvers). The \emph{key goal} is to ensure the correctness and reliability of many fundamental development tools we very depend on. These work was published in PLDI 2016, ICSE 2019 and FSE 2019.
+
+We proposed two stress-testing techniques \emph{\textbf{classming}} and \emph{\textbf{classfuzz}} for JVMs. We discovered \underline{62+} JVM discrepancies in the start-up process of \texttt{Oracle}'s HotSpot and \texttt{IBM}'s J9, which lead to  several clarifications and changes to the Java SE 8 edition of the JVM specification; We revealed \underline{30+} fatal bugs in \texttt{Oracle}'s HotSpot and \texttt{IBM}'s J9. In particular, we found one highly-critical security vulnerability (CVE-2017-1376, CVSS base score \underline{9.8}), which directly affects \underline{6} IBM's products and \underline{99} IBM's derivative products.
+
+To validate the correctness of software model checkers, we proposed an effective testing technique \textbf{\emph{\href{https://github.com/MCFuzzer/MCFuzz}{MCFuzz}}}. 
+This is the \emph{very first work} to tackle the challenging problem of how to validating software model checkers.
+MCFuzz has extensively tested three state-of-the-art and state-of-the-practice C software model checkers, \texttt{CPAchecker}, \texttt{CBMC}, and \texttt{SeaHorn}. We have found bugs in all
+three model checkers. To date, we have reported a total of \underline{62} unique bugs --- \underline{59} were previously unknown, \underline{58} have been confirmed, and \underline{20} have been fixed. We are well-appreciated by the model checker developers.
+Daniel Kroening, a professor from University of Oxford, who proposed and developed CBMC, thanked our bug reports in person and added our generated new tests into their test suites ``\emph{Many thanks, test added}''.
+The research group lead by Dirk Beyer, a professor from LMU Munich, who proposed and developed CPAchecker, also thanked us for our bug reports ``\emph{Thank you very much for finding and reporting these cases! This is very helpful for us}''.
+
+
+
+\begin{thebibliography}{99}
+	
+	\bibitem{sere14}
+	\newblock Ting Su, Siyuan Jiang, Geguang Pu, Bin Fang, Jifeng He, Jun Yan and Jianjun Zhao.
+	\newblock Automated Coverage-Driven Test Data Generation Using Dynamic Symbolic Execution.
+	\newblock {\em Eighth International Conference on Software Security and Reliability}, SERE'14, 2014.
+	
+	\bibitem{icse15}
+	\newblock Ting Su, Zhoulai Fu, Geguang Pu, Jifeng He, and Zhendong Su.
+	\newblock Combining Symbolic Execution and Model Checking for Data Flow Testing.
+	\newblock {\em 37th {IEEE/ACM} International Conference on Software Engineering}, ICSE'15, 2015.
+	
+	\bibitem{csur17}
+	\newblock Ting Su, Ke Wu, Weikai Miao, Geguang Pu, Jifeng He, Yuting Chen and Zhendong Su.
+	\newblock A Survey on Data-Flow Testing.
+	\newblock {\em ACM Computing Surveys}, 2017.
+	
+	\bibitem{scis16}
+	\newblock Ting Su, Geguang Pu, Weikai Miao, Jifeng He, and Zhendong Su.
+	\newblock Automated Coverage-driven Testing: Combining Symbolic Execution and Model Checking. 
+	\newblock {\em SCIENCE CHINA Information Sciences}, 2016.
+
+	\bibitem{smartunit}
+	\newblock Chengyu Zhang, Yichen Yan, Hanru Zhou, Yinbo Yao, Ke Wu, Ting Su, Weikai Miao and Geguang Pu.
+	\newblock SmartUnit: Empirical Evaluations for Automated Unit Testing of Embedded Software in Industry.
+	\newblock {\em 	The 40th International Conference on Software Engineering (SEIP)}, ICSE'18, 2018.
+	
+	\bibitem{fsmdroid}
+	\newblock Ting Su.
+	\newblock FSMdroid: Guided GUI Testing of Android Apps.
+	\newblock {\em 	The 38th International Conference on Software Engineering}, ICSE'16, 2016.
+	
+	\bibitem{stoat}
+	\newblock Ting Su, Guozhu Meng, Yuting Chen, Ke Wu, Weiming Yang, Yao Yao, Geguang Pu, Yang Liu, and Zhendong Su.
+	\newblock Guided, Stochastic Model-Based GUI Testing of Android Apps.
+	\newblock {\em 	The 11th joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering}, FSE'17, 2017.
+	
+	\bibitem{study}
+	\newblock Lingling Fan, Ting Su, Sen Chen, Guozhu Meng, Yang Liu, Lihua Xu, Geguang Pu and Zhendong Su.
+	\newblock Large-Scale Analysis of Framework-Specific Exceptions in Android Apps.
+	\newblock {\em 	The 40th International Conference on Software Engineering}, ICSE'18, 2018.
+	
+	\bibitem{study2}
+	\newblock Ting Su, Lingling Fan, Sen Chen, Yang Liu, Lihua Xu, Geguang Pu and Zhendong Su.
+	\newblock Why My App Crashes? Understanding and Benchmarking
+	Framework-specific Exceptions of Android apps. 
+	\newblock {\em 	IEEE Transactions on Software
+		Engineering}, TSE 2019 (under review).
+	
+	\bibitem{apechecker}
+	\newblock Lingling Fan, Ting Su, Sen Chen, Guozhu Meng, Yang Liu, Lihua Xu, and Geguang Pu.
+	\newblock Efficiently Manifesting Asynchronous Programming Errors in Android Apps.
+	\newblock {\em The 33rd IEEE/ACM International Conference on Automated Software Engineering}, ASE'18, 2018.
+	
+	\bibitem{ausera}
+	\newblock Sen Chen, Ting Su, Lingling Fan, Guozhu Meng, Minhui Xue, Yang Liu, Lihua Xu.
+	\newblock Are Mobile Banking Apps Secure? What Can be Improved?.
+	\newblock {\em 	The 26th joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering}, FSE'18, 2018.
+	
+	\bibitem{recdroid}
+	\newblock Yu Zhao, Tingting Yu, Ting Su, Yang Liu, Wei Zheng, Jingzhi Zhang, and William G.J. Halfond.
+	\newblock StoryDroid: Automated Generation of Storyboard for Android Apps.
+	\newblock {\em 	The 41th International Conference on Software Engineering}, ICSE'19, 2019.
+	
+	\bibitem{ui2code}
+	\newblock Chunyang Chen, Ting Su, Guozhu Meng, Zhenchang Xing and Yang Liu .
+	\newblock From UI Design Image to GUI Skeleton: A Neural Machine Translator to Bootstrap Mobile GUI Implementation.
+	\newblock {\em 	The 40th International Conference on Software Engineering}, ICSE'18, 2018.
+	
+	\bibitem{storydroid}
+	\newblock Sen Chen, Lingling Fan, Chunyang Chen, Ting Su, Wenhe Li, Yang Liu, Lihua Xu.
+	\newblock Large-Scale Analysis of Framework-Specific Exceptions in Android Apps.
+	\newblock {\em 	The 41th International Conference on Software Engineering}, ICSE'19, 2019.
+	
+	\bibitem{classfuzz}
+	\newblock Yuting Chen, Ting Su, Chengnian Sun, Zhendong Su, and Jianjun Zhao.  
+	\newblock Coverage-Directed Differential Testing of JVM Implementations.
+	\newblock {\em ACM SIGPLAN Conference on Programming Language Design and Implementation}, PLDI'16, 2016.
+	
+	\bibitem{classming}
+	\newblock Yuting Chen, Ting Su, and Zhendong Su.
+	\newblock Deep Differential Testing of JVM Implementations.
+	\newblock {\em The 41st ACM/IEEE International Conference on Software Engineering}, ICSE'19, 2019
+	
+	\bibitem{mcfuzz}
+	\newblock Chengyu Zhang, Ting Su, Yichen Yan, Fuyuan Zhang, Geguang Pu and Zhendong Su.  
+	\newblock Finding and Understanding Bugs in Software Model Checkers.  
+	\newblock {\em 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}, FSE'19, 2019. 
+	
+
+	
+\end{thebibliography}
+
+
+\end{document}
