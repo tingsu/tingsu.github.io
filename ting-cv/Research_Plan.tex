@@ -24,20 +24,20 @@ the complexity and diversity of software have grown rapidly.
 For example, the \emph{control software} running in a car has increased from 10 thousand lines of code in 1980 to 100 million lines of code in 2020.
 Android, the most popular \emph{mobile software}, since its first release by Google in 2007, now it has over 10 major versions and is running on 24,000 distinct  device models. 
 \emph{Deep learning software} recently is gaining more popularity in self-driving cars and robotic systems.
-However, this situation brings many challenges on how to \emph{thoroughly} and \emph{effectively} ensure software quality, reliability and security in such heterogeneous environment.
+However, this situation brings many challenges on how to \emph{thoroughly} and \emph{effectively} ensure the quality, reliability and security of these different software systems, which typically running in complex environment.
 
 To this end, my research aims to develop novel program analysis, testing and verification techniques to improve software reliability, security, and development productivity. In my research, I devote myself to convert these techniques into practical tools (not just prototypes), and benefit both academic researchers and industrial practitioners. 
-In the short term (3 years), I will concentrate on the following three research directions: 
+In the short term (3 years), I plan to concentrate on the following three research directions: 
 (1) quality assurance for control software systems, (2) correctness validation for machine learning software systems, and (3) automated testing for human-computer interaction software.
 
 \section{Research Plan}
 
 \subsection{Quality Assurance for Control Software Systems}
 
-The reliability and security of control software in many IoT systems very crucial in industry.
-These control software has several unique characteristics. 
-First, these software often uses private or public protocols to realize data transmission, such as railway signal system, vehicle control system and satellite gesture control system. 
-Second, these software is usually layered designed to achieve various functions via different API interfaces.
+The reliability and security of control software in many IoT systems are very crucial in industry.
+These software has several unique characteristics. 
+First, they often use private or public protocols to realize data transmission, such as railway signal system, vehicle control system and satellite gesture control system. 
+Second, they are usually layered-designed to achieve various functions via different API interfaces.
 For example, the emerging industrial Internet platform has multiple layers, including device layer, cloud service layer, micro-service layer and application layer. 
 However, existing software testing techniques cannot enforce thorough and effective protocol and interface validation. Many software errors are discovered post-deployment, and lead to severe losses. 
 
@@ -50,13 +50,13 @@ which is the main challenge in protocol testing.
 (2) \emph{Effective interface testing techniques}.
 For a specific platform architecture, I plan to use natural language processing technique to extract functional specification from its API documentation. 
 Given an interface, the technique aims to generate non-homogenous API call sequences and parameters to stress test the functional correctness.
-These techniques will lead to effective analysis and testing tools for IoT systems or modules.
+These techniques will lead to effective analysis and testing tools for IoT systems. Specifically, I plan to focus on smart home device and robotic software.
 
 \subsection{Correctness Validating for Machine Learning Software Systems}
 
 Recently, many artificial intelligence software systems achieved rapid development. Machine learning (especially deep learning) based software systems have been widely used in safety-critical areas such as autonomous driving, medical diagnostics, and industrial robotics. However, how to guarantee their reliability and security is still in their infancy. 
 
-Taking autonomous driving as an example, this type of system mainly uses the deep neural network to automatically identify objects in the road image, combines sensor data, and controls the wheel steering and vehicle speed. However, according to incomplete statistics,
+Taking autonomous driving as an example, this type of system mainly uses the deep neural network to automatically identify objects in the road image, combines sensor data, and controls the wheel steering and speed. However, according to incomplete statistics,
 autonomous vehicles from Tesla and Uber have caused more than 10 serious casualties; 
 according to a study in 2018, autonomous vehicles still require manual interventions, 64\% of which are caused by machine learning software defects.
 However, unlike traditional software, machine learning software is driven by data, and software behavior is determined by the probability of the model generated by the training data rather than
@@ -64,16 +64,16 @@ a deterministic algorithm. This makes many traditional software testing and veri
 
 To this end, I plan to investigate how to test and validate the correctness of machine learning software systems. 
 My agenda includes two key research problems: (1) \emph{How to generate test data that is diverse and consistent with real-life scenarios}.
-In autonomous driving, the current mainstream testing technique is to generate adversarial examples as test data. These test data is generated by changing the image pixels. Although these data can effectively disturb the judgment of the deep learning system, but are difficult to be understood and can hardly be used for error localization and debugging. 
+In autonomous driving, the current mainstream testing technique is to generate adversarial examples as test data. These test data is generated by changing the image pixels. Although these data can effectively disturb the judgment of the deep learning system, but is difficult to be understood and can hardly be used for error localization and debugging. 
 Thus, I plan to use object recognition technology to effectively generate real and diverse test data by changing, adding, and deleting real objects in the image to improve the testing effectiveness.
 (2) \emph{How to generate oracle-preserving test data}. Unlike traditional software, machine learning systems do not have clear functional specifications, e.g., what outputs should be expected given a particular input (this is called \emph{test oracle problem} in traditional software testing), which poses a great challenge for judging machine learning software errors. I plan to use the idea of \emph{metamorphic testing}, that is, given a test input, generating a mutant input that guarantees the output, so as to achieve high-precision, low false-positive testing. 
-These technique can also be applied to test machine translation software systems.
+This technique can also be applied to test machine translation software systems, e.g., Google Translate.
 
 %My recent work on designing testing adequacy criteria for deep neural network has received an ACM SIGSOFT Distinguished Paper Award in ASE 2018. Additionally, I have participated in several related research projects in this direction. Thus, I believe I have the ability to conduct more in-depth research in this area.
 
 \subsection{Automated Testing for Human-Computer Interaction Software}
 
-Nowadays, most software services are provided via human-computer interactions. Among them, graphical user interface (GUI)-based software is particularly popular, such as mobile software, in-vehicle software, smart home appliances, and even industrial Internet apps. Take mobile software as an example, they provide a variety of services, such as e-banking services, third-party payments, map navigation, remote control and so on. The errors of these software may not directly compromise personal safety, but they can directly affect user loyalty and vendor reputation. However, unlike traditional software, these software targets ordinary users rather than professional developers. Thus, many challenges exists for effectively testing them. First, this type of software is highly application-specific and heavily depends on specific interaction scenarios, and traditional testing techniques are difficult to thoroughly cover these scenarios. For example, online shopping software requires specific shopping procedure to reach the payment page; and gaming software requires specific strategies to enter specific game scenario. 
+Nowadays, most software services are provided via human-computer interactions. Among them, graphical user interface (GUI)-based software is particularly popular, such as mobile software, in-vehicle software, smart home apps, and even industrial Internet apps. Take mobile software as an example, they provide a variety of services, such as e-banking services, third-party payments, map navigation, remote control and so on. The errors of these software may not directly compromise personal safety, but they can directly affect user loyalty and vendor reputation. However, unlike traditional software, these software targets ordinary users rather than professional developers. Thus, many challenges exists for effectively testing them. First, this type of software is highly application-specific and heavily depends on specific interaction scenarios, and traditional testing techniques are difficult to thoroughly cover these scenarios. For example, online shopping software requires specific shopping procedure to reach the payment page; and gaming software requires specific strategies to enter specific game scenario. 
 Second, due to the features of human interactions and frequent GUI updates, test data design, maintenance and error detection heavily depends on human knowledge.
 Third, these software can be easily affected by external environment, such as equipment status, geographic location, network, and so on.
 
@@ -82,7 +82,7 @@ To this end, I plan to conduct in-depth research for testing human-computer inte
 I plan to leverage existing developer test data, history user data, and AI techniques to produce application-specific test data. 
 These test data can effectively guide testing to reach specific usage scenarios, and combine more systematic testing techniques to find deep software bugs.
 (2) \emph{Property-based functional fuzzing and validation}.
-GUI-based software (e.g., mobile software) usually do not maintain clear functional specifications or documentations. 
+GUI-based software (e.g., mobile software) usually does not maintain clear functional specifications or documentations. 
 This makes it very difficult to verify the functional correctness.
 Thus, I plan to leverage some invariant properties (e.g., interacting with independent GUI elements should not affect other GUI elements on the screen), and insert additional interaction events (i.e., the interactions on these independent GUI elements) into existing tests to generate new tests. These new interaction events can be viewed as various adverse conditions for validating functional correctness.
 
@@ -93,7 +93,7 @@ I also plan to host international conferences or domestic workshops to improve r
 
 \section{Research Achievements and Impacts}
 
-This section gives a short summary of my accomplished research achievements and impacts, which serves the basis of the above research plan.
+I give a short summary of my accomplished research achievements and impacts, which serves the basis of the above research plan.
 
 {\noindent\textbf{Publications}: \#Total Papers: \textbf{29}, \#Top-tier Papers(CCF-A/SCI-T1) : \textbf{16}, Google Scholar Citation: 391
 	
