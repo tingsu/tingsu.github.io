@@ -20,101 +20,111 @@
 
 <h2>Research on Mobile App Analysis and Testing</h2>
 
-Mobile apps are <i>GUI-centered</i> and <i>event-driven</i> software.
+Mobile apps are typical <i>GUI-centered</i> and <i>event-driven</i> software.
 They are now ubiquitous and serving the needs of our daily
-life in many different aspects. However, They typically run in 
-complex environments (e.g., different OSes, diverse devices and 
-third-party libraries). Thus, ensuring their reliability and 
-correctness postdeployment has been a longstanding challenge.
-The goal our research is to improve 
+life in many different aspects. However, due to the
+complex end-user environments (e.g., different OSes, 
+vendor devices and third-party libraries), ensuring app 
+reliability and correctness has thus become a longstanding 
+challenge in industry. Our research aims to tackle this challenge by developing novel, effective 
+and practical approaches and techniques to improve app quality, reliability
+and usability. <br><br>
 
-Satisfiability Modulo Theory (SMT) solvers are foundational tools for
-many subareas of computer science, including formal verification,
-programming languages, and software engineering. Their reliability and
-robustness are crucial, especially for the safety-critical
-domains. However, effectively validating SMT solvers has been a
-longstanding challenge.  The goal of Project Yin-Yang is to develop
-novel, effective, practical methods and techniques to help make SMT
-solvers more reliable, powerful, and usable.
+To this end, we have devoted much research effort over the recent
+years and developed several effective app analysis and testing techniques, including:<br>
 
-To this end, we have introduced two novel, highly effective techniques
-for stress-testing SMT solvers: <i>semantic fusion</i> [1]
-and <i>type-aware operator mutation</i> [2]. The key idea behind
-semantic fusion is to systematically combine two existing
-equisatisfiable (i.e., both satisfiable or unsatisfiable) formulas
-into a new formula that, by construction, preserves
-satisfiability. Type-aware operator mutation is a simple, general,
-unusually effective approach for differentially testing SMT solvers by
-generating diverse type-correct formulas.
+<li>
+ <a href="https://github.com/tingsu/Stoat"><font size="3"><b>Stoat</b></font></a>, a fully automated GUI fuzzing technique for finding <i>crashing</i> bugs;
+</li>
+<li>
+ <a href="https://github.com/functional-fuzzing-android-apps/home"><font size="3"><b>Genie</b></font></a> and <a href="https://github.com/setting-defect-fuzzing/home"><font size="3"><b>SetDroid</b></font></a>, fully automated GUI fuzzing techniques for finding <i>non-crashing, logic</i> bugs;
+</li>
+<li>
+<a href="https://github.com/the-themis-benchmarks/home"><font size="3"><b>Themis</b></font></a>, a <i>ground-truth</i> benchmark for evaluating automated GUI fuzzing techniques.
+</li>
+<br>
 
-YinYang and OpFuzz, the realizations of semantic fusion and type-aware
-operator mutation, have demonstrated their remarkable effectiveness by
-having already <b>found 1,000+ bugs in Z3 and CVC4</b>, the two
-state-of-the-art SMT solvers.
 
+<!--Our techniques have been applied to test 6000+ open-source and industrial Android apps and found 5800+ unique bugs. -->
+In addition to successfully finding many bugs in open-source apps, our techniques has found and reported 100+ bugs in several <i>highly-popular industrial apps</i>
+with billions of monthly-active users, many of which have been already fixed by the app vendors.
 <p>
-
-We have maintained our continuous, extensive effort in stress-testing
-Z3 and CVC4 to benefit the SMT solver developer, user, and research
-communities:
-
-
-<p>
-[Summary: <b>1,560</b> (total) / <b>1,061</b> (fixed)]<br><br>
-[Z3 bugs: <b>1,147</b> (total) / <b>779</b> (fixed)]<br>
-[CVC4 bugs: <b>413</b> (total) / <b>282</b> (fixed)]<br><br>
-[Bugs in default mode (Z3): <b>680</b> (total) / <b>479</b> (fixed)]<br>
-[Bugs in default mode (CVC4): <b>204</b> (total) / <b>147</b> (fixed)]<br><br>
-[Soundness bugs (Z3): <b>375</b> (total) / <b>228</b> (fixed)]<br>
-[Soundness bugs (CVC4): <b>71</b> (total) / <b>60</b> (fixed)]<br>
-</p>
-Semantic Fusion (<a href="yinyang_bugs.html">report links</a>) <br>
-Type-aware Operator Mutation (<a href="opfuzz_bugs.html">report links</a>) <br>
-Generative Type-aware Mutation (<a href="typefuzz_bugs.html">report links</a>)
+Douyin: <b>75</b> (total) / <b>31</b> (fixed)<br>
+WeChat: <b>11</b> (total) / <b>11</b> (fixed)<br>
+CapCut: <b>4</b> (total) / <b>4</b> (fixed)<br>
+TikTok: <b>3</b> (total) / <b>1</b> (fixed)<br>
+QQmail: <b>2</b> (total) / <b>2</b> (fixed)<br>
+Google+: <b>2</b> (total) / <b>2</b> (fixed)<br>
+AlipyaHK: <b>2</b> (total) / <b>2</b> (fixed)<br>
+Gmail: <b>1</b> (total) / <b>1</b> (fixed)<br>
 </p>
 
-<p><img class="" src="./img/tool_logo.png" alt="" width="25pt" style="margin-bottom:-8px; margin-right:5px"/> <b>yinyang Tool</b>: <a href="https://github.com/testsmt/yinyang">https://github.com/testsmt/yinyang</a></p>
+Up to now, SetDroid has been intergated into <a href="https://github.com/bytedance/Fastbot_Android">FastBot</a> 
+(ByteDance's official app testing infrastructure) for daily testing; and Themis has helped optimize/enhance <a href="https://github.com/bytedance/Fastbot_Android">FastBot</a>
+with seveal new GUI fuzzing & mutation strategies.
+<br><br>
 
-Please follow us on
-Twitter <a href="https://twitter.com/testsmtsolvers">@testsmtsolvers</a> for
-important project developments and regular tweets about interesting
-bugs in Z3 and CVC4.
+If you have some questions, feel free to contact us (<a href="https://tingsu.github.io/">Ting Su</a>).
 
-<h3>Team</h3>
-<a href="https://people.inf.ethz.ch/suz">Zhendong Su</a> <br>
-<a href="https://wintered.github.io/">Dominik Winterer</a> <br>
-<a href="http://chengyuzhang.com">Chengyu Zhang</a> <br>
-<a href="https://www.linkedin.com/in/jiwon-park-473998170/?originalSubdomain=fr">Jiwon Park</a> <br>
+<br><br>
+
+<h3>Selected Publications</h3> 
 
 
+<li>
+<strong>Fully Automated Functional Fuzzing of Android Apps for Detecting Non-Crashing Logic Bugs</strong><img src="files/new.gif" alt="" /><br/>
+    Ting Su, Yichen Yan, Jue Wang, Jingling Sun, Yiheng Xiong, Geguang Pu, Ke Wang, Zhendong Su<br/>
+    <i>ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications</i><br/>
+    <a href="https://2021.splashcon.org/track/splash-2021-oopsla">SPLASH/OOPSLA 2021</a>, <a href="https://tingsu.github.io/files/oopsla21-Genie.pdf">pdf</a>, <a href="https://github.com/functional-fuzzing-android-apps/home">Genie</a>.
+</li><br>
+	
+<li>
+<strong>Benchmarking Automated GUI Testing for Android against Real-World Bugs</strong><img src="files/new.gif" alt="" /><br/>
+    Ting Su, Jue Wang, Zhendong Su<br/>
+    <i>29th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering</i><br/>
+    <a href="https://2021.esec-fse.org/">ESEC/FSE 2021</a>, <a href="https://tingsu.github.io/files/fse21-themis.pdf">pdf</a>, <a href="https://www.youtube.com/watch?v=ZDps3zx2pCY">talk video</a>, <a href="https://github.com/the-themis-benchmarks/home">Themis</a>.
+</li><br>
 
-<h3>Publications</h3>
+<li>
+<strong>Understanding and Finding System Setting-Related Defects in Android Apps</strong><img src="files/new.gif" alt="" /><br/>
+    Jingling Sun, Ting Su, Junxin Li, Zhen Dong, Geguang Pu, Tao Xie, Zhendong Su<br/>
+    <i>30th ACM SIGSOFT International Symposium on Software Testing and Analysis</i><br/>
+    <a href="https://conf.researchr.org/home/issta-2021">ISSTA 2021</a>, <a href="https://tingsu.github.io/files/issta21-Setdroid.pdf">pdf</a>, <a href="https://github.com/setting-defect-fuzzing/home">SetDroid</a>.
+</li><br>
 
-  <!--<a href="https://testsmt.github.io/papers/winterer-zhang-su-pldi20.pdf">-->
-  [1] <a href="https://dl.acm.org/doi/pdf/10.1145/3385412.3385985">
-  <B>Validating SMT Solvers via Semantic Fusion</B></a>. [<a href="https://testsmt.github.io/slides/pldi20-semantic-fusion.pdf">slides</a> |
-  <a href="https://www.youtube.com/watch?list=PLyrlk8Xaylp5mvxARtX5ncjy9p4X_Ajwd&time_continue=1&v=JFu8cJYbxBI&feature=emb_logo">video abstract</a> |
-  <a href="https://www.youtube.com/watch?v=hEWpbO5yXPw&list=PLyrlk8Xaylp5mvxARtX5ncjy9p4X_Ajwd&index=178">talk video</a>] <br> 
-Dominik Winterer<sup>*</sup>, Chengyu Zhang<sup>*</sup> and Zhendong Su </br> 
-In <a href="https://conf.researchr.org/home/pldi-2020"><I>Proceedings of PLDI 2020</I></a>, London, UK, June 2020. </br>
-<div style="font-size:10pt;margin-bottom:-10pt "><sup>*</sup>
-  Both authors contributed equally to this work.
-</div>
-  <br> &nbsp; <img class="" src="./img/award.png" alt="" width="20pt"/> &nbsp; <font color="red">PLDI Distinguished Paper Award</font> <br><br>
+<li>
+<strong>Why My App Crashes? Understanding and Benchmarking Framework-specific Exceptions of Android apps</strong><img src="files/new.gif" alt="" /><br/>
+    Ting Su, Lingling Fan, Sen Chen, Yang Liu, Lihua Xu, Geguang Pu, and Zhendong Su<br/>
+    <i>IEEE Transactions on Software Engineering</i><br/>
+    <a href="https://www.computer.org/csdl/journal/ts">TSE 2020</a>, <a href="https://tingsu.github.io/files/tse2022-study.pdf">pdf</a>, <a href="https://github.com/tingsu/DroidDefects">DroidDefects</a>.
+</li><br>
 
-  [2] <a href="https://dl.acm.org/doi/abs/10.1145/3428261"><B>On the Unusual Effectiveness of Type-aware Operator Mutations for Testing SMT Solvers</B></a>. <br /> [<a href="https://testsmt.github.io/slides/oopsla20-type-aware-op-mutation.pdf">slides</a> | 
-  <a href="https://www.youtube.com/watch?v=uCEN3AnBYC0&feature=emb_title">video abstract</a> | 
-<a href="https://www.youtube.com/watch?v=sbQX2SnCKHA">talk video</a>] 
-<br> 
-Dominik Winterer<sup>*</sup>, Chengyu Zhang<sup>*</sup> and Zhendong Su</br>
-In <a href="https://2020.splashcon.org/"><I>Proceedings of SPLASH/OOPSLA 2020</I></a>, November 2020.
-</br>
-<div style="font-size:10pt;margin-bottom:-10pt"><sup>*</sup> Both authors contributed equally to this work. </div>
-</br>
-</br>
- [3] <a href="https://wintered.github.io/papers/park-etal-oopsla21.pdf"><B>Generative Type-Aware Mutation for Testing SMT Solvers.</B></a><br /> 
-Jiwon Park, Dominik Winterer, Chengyu Zhang and Zhendong Su</br>
-In <a href="https://2021.splashcon.org/track/splash-2021-oopsla"><I>Proceedings of SPLASH/OOPSLA 2021</I></a>, October 2021 </br>
+<li>
+<strong>Efficiently Manifesting Asynchronous Programming Errors in Android Apps</strong><br/>
+    Lingling Fan, Ting Su, Sen Chen, Guozhu Meng, Yang Liu, Lihua Xu, Geguang Pu<br/>
+    <i>The 33rd IEEE/ACM International Conference on Automated Software Engineering</i> <br>
+    <a href="http://ase2018.com/">ASE 2018</a> (acceptance rate: 19.9%), <a href="https://tingsu.github.io/files/ase18-async.pdf">pdf</a>.<br>
+</li><br>
+
+<li> 
+    <strong>Large-Scale Analysis of Framework-Specific Exceptions in Android Apps</strong><br/>
+    Lingling Fan<sup>#</sup>, Ting Su<sup>#</sup>, Sen Chen, Guozhu Meng, Yang Liu, Lihua Xu, Geguang Pu and Zhendong Su <br/>
+    <i> The 40th International Conference on Software Engineering</i> <br>
+    <a href="https://www.icse2018.org">ICSE 2018</a> (acceptance rate: 20%), <a href="https://tingsu.github.io/files/icse18-crash.pdf">pdf</a>, <a href="https://crashanalysis.github.io/">CrashAnalysis</a>, <a href="https://tingsu.github.io/files/icse18-app-fault-study.pdf">slides</a>. <br>
+    <font size="2">(<sup>#</sup>Equal Contribution)</font>
+</li><br>
+
+	&nbsp; &nbsp; <i><b><font color="red">ACM SIGSOFT Distinguished Paper Award</font></b><img style="width: 15px; height: 18px;" src="files/award.gif" alt=""/></i><br><br>
+		
+		
+<li>
+    <strong>Guided, Stochastic Model-Based GUI Testing of Android Apps</strong><br/>
+    Ting Su, Guozhu Meng, Yuting Chen, Ke Wu, Weiming Yang, Yao Yao, Geguang Pu, Yang Liu, Zhendong Su <br/>
+    <i>The 11th joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering</i><br/>
+    <a href="http://esec-fse17.uni-paderborn.de/">FSE 2017</a>, <a href="https://tingsu.github.io/files/fse17-stoat.pdf">pdf</a>, <a href="https://tingsu.github.io/files/fse17-stoat.pptx">slides</a>, <a href="https://github.com/tingsu/Stoat">Stoat</a>.<br><br>
+
+	&nbsp; &nbsp;<i><b><font color="red">Best Research Prototype Tool Award</font></b> (NASAC 2017 held by CCF)<img style="width: 15px; height: 18px;" src="files/award.gif" alt=""/></i><br>
+
 
 
 </font>
@@ -123,6 +133,6 @@ In <a href="https://2021.splashcon.org/track/splash-2021-oopsla"><I>Proceedings 
 
 <br><br><br><br>
 
-<tt>last modified: 2021.10.29</tt>
+<tt>last modified: 2022.5.1</tt>
 </body>
 </html>
