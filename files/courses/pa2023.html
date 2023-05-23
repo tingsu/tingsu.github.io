@@ -69,8 +69,8 @@
   <tr>
     <td>28 Mar.</td>
     <td>Metamophic Testing & Property-based Testing</td>
-    <td>MT (<a href="https://ieeexplore.ieee.org/document/7422146">paper1</a>, <a href="https://dl.acm.org/doi/10.1145/3143561">paper2</a>); <br>
-      PBT (<a href="https://dl.acm.org/doi/10.1145/357766.351266">QuickCheck</a>, <a href="https://github.com/HypothesisWorks/hypothesis/">Hypothesis</a>, <a href="https://github.com/pholser/junit-quickcheck">junit-quickcheck</a>)</td>
+    <td>MT (<a href="https://ieeexplore.ieee.org/document/7422146">paper1</a>, <a href="https://dl.acm.org/doi/10.1145/3143561">paper2</a>, <a href="https://tingsu.github.io/files/courses/metamorphic_testing.html">more</a>); <br>
+      PBT (<a href="https://dl.acm.org/doi/10.1145/357766.351266">QuickCheck</a>, <a href="https://github.com/HypothesisWorks/hypothesis/">Hypothesis</a>, <a href="https://github.com/pholser/junit-quickcheck">junit-quickcheck</a>, <a href="https://tingsu.github.io/files/courses/property_based_testing.html">more</a>)</td>
 	<td><a href=""></a> 
 	</td>
   </tr>
@@ -266,188 +266,13 @@
   
 </table>
 
-<!--
-<p><h3>参考教材和其他素材</h3>
-
-<ul>
-	<li>
-	 "Software Engineering textbook"(v2021), by I. Marsic, Rutgers University</a><br/>
-	</li>
-	<li>
-		"Software Engineering-A Practitioner’s Approach (Eighth Edition)", Roger S. Pressman著, 郑人杰等译.北京: 机械工业出版社, 2015年.<br/>
-	</li>
-	<li>
-		"<a href="https://cs.gmu.edu/~offutt/softwaretest/">Introduction to Software Testing</a> (Edition 2)", Paul Ammann and Jeff Offutt. (基础)<br/> 
-	</li>
-	<li>
-		"<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", by Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler. （进阶）<br/> 
-	</li>
-  <li>
-		"<a href="https://www.debuggingbook.org/">The Debugging Book</a>", by Andreas Zeller（进阶）<br/> 
-	</li>
-  <li>
-		"<a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Educationk</a>", by MIT<br/> 
-	</li>
-</ul>
---> 
-
 
 
 <br/><br/>
 
-<p><h2>Metamorphic Testing(蜕变测试)</h2>
-
-Metamorphic testing的两篇综述论文<br/>
-<ul>
-    <li> 
-        Sergio Segura, Gordon Fraser, Ana Belén Sánchez, Antonio Ruiz Cortés: A Survey on Metamorphic Testing. IEEE Trans. Software Eng. 42(9): 805-824 (2016) (https://ieeexplore.ieee.org/document/7422146) 
-    </li>
-    <li>
-        Yueh Chen, Fei-Ching Kuo, Huai Liu, Pak-Lok Poon, Dave Towey, T. H. Tse, Zhi Quan Zhou: Metamorphic Testing: A Review of Challenges and Opportunities. ACM Comput. Surv. 51(1): 4:1-4:27 (2018)  (https://dl.acm.org/doi/10.1145/3143561, 给出了对MT更深入的分析，解释了一些对MT的误解，强烈推荐！）
-    </li> 
-</ul>
-
-Metamorphic testing的简易技术教程
-
-<ul>
-    <li> 
-        “Metamorphic Testing 20 Years Later: A Hands‐on Introduction” by Sergio Segura, Zhi Quan Zhou, ICSE 2018, Technical Briefing （https://zenodo.org/record/1256230/files/ICSE18-TB-Segura-Zhou.pdf， 对MT的相关概念进行了梳理，有些内容来源于上面的两篇综述论文）
-    </li>
-</ul>
-
-如何找到Metamorphic Relation (MR)？（这是应用Metamorphic Testing的关键问题）
-
-<ul>
-    <li> 
-        Andrei Lascu, Matt Windsor, Alastair F. Donaldson, Tobias Grosser, John Wickerson: Dreaming up Metamorphic Relations: Experiences from Three Fuzzer Tools. MET@ICSE 2021: 61-68 （给出了一些如何找到MR的经验性原则）
-    </li>
-</ul>
-
-MT的典型应用论文：
 
 
-<ul>
-    [编译器测试]
-    <li> 
-        Vu Le, Mehrdad Afshari, Zhendong Su: Compiler validation via equivalence modulo inputs. PLDI 2014: 216-226  (Complier Testing)
-    </li>
 
-    [APP测试]
-    <li> 
-        Ting Su, Yichen Yan, Jue Wang, Jingling Sun, Yiheng Xiong, Geguang Pu, Ke Wang, Zhendong Su: Fully automated functional fuzzing of Android apps for detecting non-crashing logic bugs. Proc. ACM Program. Lang. 5(OOPSLA): 1-31 (2021)
-    </li>
-    <li>
-        Jingling Sun, Ting Su, Junxin Li, Zhen Dong, Geguang Pu, Tao Xie, Zhendong Su: Understanding and finding system setting-related defects in Android apps. ISSTA 2021: 204-215 
-    </li>
-
-    [数据库测试]
-    <li> 
-        Manuel Rigger, Zhendong Su: Testing Database Engines via Pivoted Query Synthesis. OSDI 2020: 667-682
-    </li> 
-    <li> 
-        Manuel Rigger, Zhendong Su: Finding bugs in database systems via query partitioning. Proc. ACM Program. Lang. 4(OOPSLA): 211:1-211:30 (2020)
-    </li>
-    <li> 
-        Manuel Rigger, Zhendong Su: Detecting optimization bugs in database engines via non-optimizing reference engine construction. ESEC/SIGSOFT FSE 2020: 1140-1152
-    </li>
-
-    [SMT测试]
-    <li> 
-        Dominik Winterer, Chengyu Zhang, Zhendong Su: Validating SMT solvers via semantic fusion. PLDI 2020: 718-730
-    </li>
-
-    [其他领域]
-    <li>
-        Andrei Lascu, Alastair F. Donaldson, Tobias Grosser, Torsten Hoefler: Metamorphic Fuzzing of C++ Libraries. ICST 2022: 35-46
-    </li>
-
-</ul>
-
-
-<p><h2>Property-based Testing(基于性质的测试)</h2>
-
-    Property-based Testing的经典论文： <br>
-
-<ul>
-    <li>
-        Fink, George, and Matt Bishop. “Property-based testing: a new approach to testing for assurance.” ACM SIGSOFT Software Engineering Notes 22.4 (1997): 74-80. https://dl.acm.org/doi/pdf/10.1145/263244.263267 
-    </li>
-    <li>
-        Koen Claessen, John Hughes: QuickCheck: a lightweight tool for random testing of Haskell programs. ICFP 2000: 268-279  https://dl.acm.org/doi/10.1145/357766.351266 
-    </li>
-</ul>
-    
-    Property-based Testing的应用论文 <br>
-    
-<ul>
-    [Mobile Apps测试]
-    <li>
-        Lam, Edmund SL, Peilun Zhang, and Bor-Yuh Evan Chang. “ChimpCheck: property-based randomized test generation for interactive apps.” Proceedings of the 2017 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software. 2017. https://github.com/cuplv/chimpcheck   
-    </li>
-
-    [Web Apps测试]
-    <li>
-        O‘Connor, Liam, and Oskar Wickström. “Quickstrom: property-based acceptance testing with LTL specifications.” Proceedings of the 43rd ACM SIGPLAN International Conference on Programming Language Design and Implementation. 2022. https://github.com/quickstrom/quickstrom 
-    </li>
-
-    [ROS系统测试]
-    <li>
-        André Santos, Alcino Cunha, Nuno Macedo: Property-based testing for the robot operating system. A-TEST@ESEC/SIGSOFT FSE 2018: 56-62  https://dl.acm.org/doi/10.1145/3278186.3278195 
-    </li>
-
-    [Java SDK Library测试]
-    <li>
-        Rohan Padhye, Caroline Lemieux, Koushik Sen: JQF: coverage-guided property-based testing in Java. ISSTA 2019: 398-401 https://dl.acm.org/doi/pdf/10.1145/3293882.3339002 （工具： https://github.com/rohanpadhye/jqf ）
-    </li>
-    
-    [其他一些软件系统的测试]
-    <li>
-        Andreas Stahlbauer, Marvin Kreis, Gordon Fraser: Testing scratch programs automatically. ESEC/SIGSOFT FSE 2019: 165-175 https://dl.acm.org/doi/10.1145/3338906.3338910 
-    </li>
-    <li>
-        Stefan Karlsson, Adnan Causevic, Daniel Sundmark: QuickREST: Property-based Test Generation of OpenAPI-Described RESTful APIs. ICST 2020: 131-141 https://ieeexplore.ieee.org/document/9159071/ 
-    </li>
-    <li>
-        Andreas Löscher, Konstantinos Sagonas: Targeted property-based testing. ISSTA 2017: 46-56 https://dl.acm.org/doi/10.1145/3092703.3092711 
-    </li>
-</ul>  
-    
-    可以理解为也属于Property-based Testing的应用论文 <br>
-
-<ul>
-    <li>Park M, Jang H, Byun T, et al. Property-based testing for LG home appliances using accelerated software-in-the-loop simulation[C]//2020 IEEE/ACM 42nd International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP). IEEE, 2020: 120-129.</li>
-    <li>Ruijie Meng, Zhen Dong, Jialin Li, Ivan Beschastnikh, and Abhik Roychoudhury. 2022. Linear-time temporal logic guided greybox fuzzing. In Proceedings of the 44th International Conference on Software Engineering (ICSE '22). Association for Computing Machinery, New York, NY, USA, 1343–1355. https://doi.org/10.1145/3510003.3510082</li>
-</ul>
-    
-    Property-based Testing的talks：<br>
-    
-<ul>
-    <li>Oskar Wickström - Property-Based Testing The Ugly Parts: Case Studies from Komposition  https://www.youtube.com/watch?v=z2ete8VZnZY </li>
-    <li>Hughes - Don‘t Write Tests. https://www.youtube.com/watch?v=hXnS_Xjwk2Y </li> 
-    <li>John Hughes - Testing the Hard Stuff and Staying Sane. https://www.youtube.com/watch?v=zi0rHwfiX1Q </li>
-</ul>
-    
-    Property-based Testing的一些其他参考资料（都讲的很好）<br>
-    
-<ul>
-
-    <li>Overview of Property-Based Testing Functionality，https://github.com/jmid/pbt-frameworks  (很不错的一个资源，是一个丹麦的教授维护的，他自己也教授functional programming, 汇集了不少PBT的框架比较和资源)</li>
-    <li>Model-based Testing (Stateful and Model-based Properties with Examples in Java): https://johanneslink.net/model-based-testing/  （这篇技术博客把广义上的model-based testing讲的非常清楚）</li>
-    <li>Relational Problems to Teach Property-Based Testing (by John Wrenna , Tim Nelsona , and Shriram Krishnamurthia) https://cs.brown.edu/~tbn/publications/wnk-pj20-pbt.pdf </li>
-    <li>Property-based Testing and Test Oracles  https://swen90006.github.io/notes/Property-based-testing.html#    
-    （澳洲一个大学的测试课教程，Section 6.4.3 - Metamorphic oracles, Section 6.4.7 - Oracle derivation, Section 6.5 - Property-based testing。关于MT和PBT这块讲解的挺清楚，其中谈到Metamorphic Testing（MT)是属于Property-based testing（PBT)的一种测试方法）</li>
-</ul>
-    
-    与Property-based Testing工具相关的资料：<br>
-    
-<ul>
-    <li>MacIver D R, Hatfield-Dodds Z. Hypothesis: A new approach to property-based testing[J]. Journal of Open Source Software, 2019, 4(43): 1891. https://joss.theoj.org/papers/10.21105/joss.01891.pdf </li>
-    <li>junit-quickcheck: https://github.com/pholser/junit-quickcheck </li>
-    <li>Hedgehog: https://hedgehog.qa/ </li>
-    <li>hypothesis: https://github.com/HypothesisWorks/hypothesis/ </li>
-</ul>
-    
-    
 
 
 
